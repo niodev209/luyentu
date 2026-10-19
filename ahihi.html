@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cẩm Nang Cấu Trúc Giới Từ Tiếng Anh - Ôn Luyện Toàn Diện</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Quicksand', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              200: '#fecdd3',
+              300: '#fda4af',
+              400: '#fb7185',
+              500: '#f43f5e',
+              600: '#e11d48',
+              700: '#be123c',
+              800: '#9f1239',
+              900: '#881337',
+            },
+            softpink: {
+              50: '#fff5f7',
+              100: '#fde8ed',
+              200: '#fcd2dc',
+              300: '#f9a8bd',
+              400: '#f47298',
+              500: '#ec487f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #fff5f7;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(254, 205, 211, 0.4) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(253, 164, 175, 0.3) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(254, 226, 226, 0.5) 0px, transparent 50%);
+      background-attachment: fixed;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fce7f3;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #f472b6;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ec4899;
+    }
+    /* 3D Flip Card */
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+    .transform-style-3d {
+      transform-style: preserve-3d;
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+    .card-flipped {
+      transform: rotateY(180deg);
+    }
+    /* Pulse glow */
+    @keyframes softPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+    .animate-soft-pulse {
+      animation: softPulse 2.5s infinite ease-in-out;
+    }
+    /* Confetti Canvas */
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 antialiased font-sans flex flex-col justify-between">
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Main Container -->
+  <div class="w-full max-w-6xl mx-auto px-4 py-6 md:py-8 flex-1">
+    
+    <!-- Top Header -->
+    <header class="bg-white/80 backdrop-blur-md border border-pink-200/80 rounded-3xl p-5 md:p-7 shadow-xl shadow-pink-200/40 mb-6 relative overflow-hidden">
+      <!-- Decorative background blur circles -->
+      <div class="absolute -right-12 -top-12 w-48 h-48 bg-pink-200/50 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute -left-12 -bottom-12 w-48 h-48 bg-rose-200/40 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-pink-100 to-rose-100 border border-pink-300 text-pink-700 text-xs font-bold uppercase tracking-wider mb-2">
+            <span>✨ Sổ Tay Học Tập 4.0</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-pink-500 animate-ping"></span>
+            <span>358 Cấu Trúc Trọng Điểm</span>
+          </div>
+          <h1 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-rose-600 to-fuchsia-600 tracking-tight">
+            Cấu Trúc & Giới Từ Tiếng Anh
+          </h1>
+          <p class="text-slate-600 text-sm md:text-base mt-1 font-medium">
+            Học thông minh với âm thanh phát âm bản xứ, Flashcard ghi nhớ nhanh và bài tập trắc nghiệm tổng hợp!
+          </p>
+        </div>
+
+        <!-- Quick Stats & Settings -->
+        <div class="flex items-center gap-2.5 flex-wrap">
+          <div class="bg-gradient-to-br from-pink-50 to-rose-50 border border-pink-200 rounded-2xl px-3.5 py-2 text-center shadow-sm">
+            <div class="text-xs text-pink-600 font-semibold uppercase">Đã thuộc</div>
+            <div class="text-lg font-bold text-slate-800" id="header-learned-count">0 / 358</div>
+          </div>
+          <div class="bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl px-3.5 py-2 text-center shadow-sm">
+            <div class="text-xs text-amber-600 font-semibold uppercase">Đã lưu ⭐</div>
+            <div class="text-lg font-bold text-slate-800" id="header-starred-count">0</div>
+          </div>
+          <button id="btn-toggle-sound" class="p-3 bg-white hover:bg-pink-50 border border-pink-200 rounded-2xl text-pink-600 transition shadow-sm hover:scale-105 active:scale-95" title="Bật/Tắt âm thanh hiệu ứng">
+            <span id="sound-icon" class="text-xl">🔊</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="mt-6 pt-5 border-t border-pink-100 flex items-center gap-2 overflow-x-auto pb-1" id="nav-tabs">
+        <button data-tab="directory" class="nav-btn active flex items-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-sm transition shadow-sm whitespace-nowrap bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-pink-300">
+          <span>📚 Tra Cứu & Học</span>
+          <span class="px-2 py-0.5 rounded-full bg-white/20 text-xs text-white">358</span>
+        </button>
+        <button data-tab="listening" class="nav-btn flex items-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-sm transition whitespace-nowrap bg-white/80 hover:bg-pink-50 text-slate-700 border border-pink-200/80">
+          <span>🎧 Luyện Nghe</span>
+          <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+        </button>
+        <button data-tab="flashcards" class="nav-btn flex items-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-sm transition whitespace-nowrap bg-white/80 hover:bg-pink-50 text-slate-700 border border-pink-200/80">
+          <span>🎴 Luyện Từ (Flashcard)</span>
+        </button>
+        <button data-tab="quiz" class="nav-btn flex items-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-sm transition whitespace-nowrap bg-white/80 hover:bg-pink-50 text-slate-700 border border-pink-200/80">
+          <span>✍️ Trắc Nghiệm Tổng Hợp</span>
+          <span class="px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 text-xs">Hot</span>
+        </button>
+        <button data-tab="matching" class="nav-btn flex items-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-sm transition whitespace-nowrap bg-white/80 hover:bg-pink-50 text-slate-700 border border-pink-200/80">
+          <span>🎮 Game Nối Từ</span>
+        </button>
+        <button data-tab="favorites" class="nav-btn flex items-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-sm transition whitespace-nowrap bg-white/80 hover:bg-pink-50 text-slate-700 border border-pink-200/80">
+          <span>⭐ Sổ Tay Đã Lưu</span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- TAB 1: DIRECTORY & SEARCH -->
+    <main id="tab-directory" class="tab-pane active space-y-5">
+      <!-- Search & Preposition Filter Bar -->
+      <div class="bg-white/80 backdrop-blur-md border border-pink-200 rounded-3xl p-5 shadow-lg shadow-pink-100">
+        <div class="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+          <!-- Search box -->
+          <div class="relative flex-1">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              🔍
+            </span>
+            <input type="text" id="dir-search-input" placeholder="Tìm theo cấu trúc tiếng Anh hoặc nghĩa tiếng Việt (vd: abide, thích nghi, at...)" class="w-full pl-10 pr-10 py-3 bg-pink-50/50 border border-pink-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-400 focus:bg-white transition" />
+            <button id="dir-search-clear" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600">✕</button>
+          </div>
+
+          <!-- Quick Actions / View filter -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <select id="dir-status-filter" class="px-3 py-2.5 bg-pink-50/50 border border-pink-200 rounded-2xl text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-pink-400">
+              <option value="all">Tất cả trạng thái</option>
+              <option value="starred">Chỉ từ đã lưu ⭐</option>
+              <option value="unlearned">Chưa thuộc</option>
+              <option value="learned">Đã thuộc ✅</option>
+            </select>
+            <button id="btn-read-all-search" class="px-3.5 py-2.5 bg-rose-100 hover:bg-rose-200 text-rose-700 rounded-2xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm">
+              <span>🔊</span><span>Đọc ngẫu nhiên 1 từ</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Preposition pills filter -->
+        <div class="mt-4 pt-3 border-t border-pink-100 flex items-center gap-1.5 flex-wrap" id="prep-filter-pills">
+          <span class="text-xs font-bold text-pink-600 uppercase tracking-wide mr-1">Giới từ:</span>
+          <!-- Pills rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Result Count Info -->
+      <div class="flex items-center justify-between px-2 text-sm text-slate-600 font-medium">
+        <div>Hiển thị <span id="dir-filtered-count" class="font-bold text-pink-600">358</span> cấu trúc</div>
+        <div class="text-xs text-slate-400 italic">Bấm biểu tượng 🔊 để nghe phát âm tiếng Anh</div>
+      </div>
+
+      <!-- Word Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="dir-cards-grid">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Pagination / Load more -->
+      <div class="flex justify-center pt-4" id="dir-pagination-container">
+        <!-- Pagination controls -->
+      </div>
+    </main>
+
+    <!-- TAB 2: LISTENING LAB -->
+    <main id="tab-listening" class="tab-pane hidden space-y-6">
+      <!-- Sub-modes selector for listening -->
+      <div class="bg-white/80 backdrop-blur-md border border-pink-200 rounded-3xl p-5 shadow-lg shadow-pink-100">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+              <span class="text-2xl">🎧</span> Phòng Luyện Nghe & Phát Âm Chuẩn
+            </h2>
+            <p class="text-xs md:text-sm text-slate-500 mt-0.5">Rèn luyện phản xạ nghe giới từ & ngữ âm bản xứ với 3 chế độ đa dạng</p>
+          </div>
+          <!-- Mode toggles -->
+          <div class="inline-flex p-1 bg-pink-100/70 rounded-2xl border border-pink-200">
+            <button id="btn-listen-mode-quiz" class="listen-mode-btn active px-3.5 py-2 rounded-xl text-xs font-bold transition bg-white text-pink-600 shadow-sm">
+              🎯 Nghe & Chọn Nghĩa
+            </button>
+            <button id="btn-listen-mode-dictation" class="listen-mode-btn px-3.5 py-2 rounded-xl text-xs font-bold transition text-slate-600 hover:text-pink-600">
+              ✏️ Nghe & Điền Giới Từ
+            </button>
+            <button id="btn-listen-mode-autoplay" class="listen-mode-btn px-3.5 py-2 rounded-xl text-xs font-bold transition text-slate-600 hover:text-pink-600">
+              📻 Nghe Thụ Động
+            </button>
+          </div>
+        </div>
+
+        <!-- Speech Settings Bar -->
+        <div class="mt-4 pt-3 border-t border-pink-100 flex items-center justify-between flex-wrap gap-3 text-xs text-slate-600">
+          <div class="flex items-center gap-2">
+            <span>Tốc độ đọc:</span>
+            <button data-rate="0.75" class="rate-btn px-2.5 py-1 rounded-lg border border-pink-200 hover:bg-pink-50 transition">0.75x</button>
+            <button data-rate="1.0" class="rate-btn active px-2.5 py-1 rounded-lg bg-pink-500 text-white font-bold transition">1.0x (Chuẩn)</button>
+            <button data-rate="1.25" class="rate-btn px-2.5 py-1 rounded-lg border border-pink-200 hover:bg-pink-50 transition">1.25x</button>
+          </div>
+          <div class="text-slate-400 flex items-center gap-1">
+            <span>💡 Mẹo: Nhấn nút loa để nghe lại nhiều lần</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mode 1: Listen & Choose Meaning -->
+      <div id="listening-view-quiz" class="bg-white/90 backdrop-blur-md border border-pink-200 rounded-3xl p-6 md:p-8 shadow-xl shadow-pink-100 text-center max-w-2xl mx-auto">
+        <div class="flex justify-between items-center text-xs font-semibold text-slate-400 mb-4">
+          <span>Câu số: <span id="lq-current-num" class="text-pink-600 font-bold">1</span> / <span id="lq-total-num">20</span></span>
+          <span class="text-emerald-600 font-bold">Điểm: <span id="lq-score">0</span></span>
+        </div>
+
+        <!-- Big Audio Button -->
+        <div class="my-6">
+          <button id="btn-lq-play-audio" class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full bg-gradient-to-tr from-pink-500 via-rose-500 to-fuchsia-500 text-white text-4xl md:text-5xl flex items-center justify-center shadow-lg shadow-pink-300 hover:scale-105 active:scale-95 transition cursor-pointer">
+            🔊
+          </button>
+          <div class="mt-3 text-sm font-semibold text-pink-600">Nhấn để nghe cụm từ tiếng Anh</div>
+          <div class="text-xs text-slate-400 mt-1" id="lq-repeat-hint">Cụm từ đã được giấu. Hãy nghe thật kỹ!</div>
+        </div>
+
+        <!-- 4 Answer Choices -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 text-left" id="lq-options-container">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Explanation & Next button (hidden initially) -->
+        <div id="lq-feedback-container" class="hidden mt-6 p-4 rounded-2xl bg-pink-50 border border-pink-200 text-left">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-wider text-pink-700" id="lq-feedback-title">Chính xác! 🎉</div>
+              <div class="text-base font-bold text-slate-800 mt-1" id="lq-revealed-phrase">abide by sth</div>
+              <div class="text-sm text-slate-600 mt-0.5" id="lq-revealed-meaning">tuân thủ điều gì đó</div>
+            </div>
+            <button id="btn-lq-speak-again" class="p-2 bg-white rounded-xl border border-pink-200 text-pink-600 hover:bg-pink-100 transition" title="Nghe lại">🔊</button>
+          </div>
+          <button id="btn-lq-next" class="mt-4 w-full py-2.5 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-xl shadow-md hover:opacity-95 transition">
+            Câu Tiếp Theo ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- Mode 2: Listen & Dictation / Cloze -->
+      <div id="listening-view-dictation" class="hidden bg-white/90 backdrop-blur-md border border-pink-200 rounded-3xl p-6 md:p-8 shadow-xl shadow-pink-100 text-center max-w-2xl mx-auto">
+        <div class="flex justify-between items-center text-xs font-semibold text-slate-400 mb-4">
+          <span>Câu số: <span id="ld-current-num" class="text-pink-600 font-bold">1</span> / <span id="ld-total-num">20</span></span>
+          <span class="text-emerald-600 font-bold">Chuỗi đúng: <span id="ld-streak">0</span> 🔥</span>
+        </div>
+
+        <button id="btn-ld-play-audio" class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-fuchsia-500 to-pink-500 text-white text-3xl flex items-center justify-center shadow-lg shadow-pink-200 hover:scale-105 active:scale-95 transition cursor-pointer mb-4">
+          🔊
+        </button>
+        <p class="text-xs text-slate-400 mb-4">Nghe và điền giới từ thích hợp vào ô trống dưới đây</p>
+
+        <!-- Sentence Cloze Display -->
+        <div class="p-4 bg-pink-50/70 border border-pink-200 rounded-2xl mb-6">
+          <div class="text-lg md:text-xl font-bold text-slate-800" id="ld-cloze-phrase">
+            be addicted [ _____ ] sth
+          </div>
+          <div class="text-sm text-slate-500 mt-1 italic" id="ld-cloze-meaning">
+            (Nghĩa: nghiện cái gì)
+          </div>
+        </div>
+
+        <!-- 4 Preposition Buttons -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 max-w-md mx-auto" id="ld-prep-options">
+          <!-- Populated by JS -->
+        </div>
+
+        <div id="ld-feedback-box" class="hidden mt-6 p-4 rounded-2xl text-left bg-white border border-pink-200">
+          <div id="ld-feedback-text" class="text-sm font-bold text-slate-800"></div>
+          <button id="btn-ld-next" class="mt-3 w-full py-2.5 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-xl transition">
+            Tiếp tục ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- Mode 3: Passive Auto-player / Radio -->
+      <div id="listening-view-autoplay" class="hidden bg-white/90 backdrop-blur-md border border-pink-200 rounded-3xl p-6 md:p-8 shadow-xl shadow-pink-100 text-center max-w-xl mx-auto">
+        <div class="inline-block px-3 py-1 bg-rose-100 text-rose-700 rounded-full text-xs font-bold mb-4">
+          📻 Chế Độ Nghe Tự Động (Luyện Tai Thụ Động)
+        </div>
+
+        <!-- Big Card Display -->
+        <div class="p-8 bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100 border-2 border-pink-200 rounded-3xl shadow-inner min-h-[200px] flex flex-col justify-center items-center">
+          <div class="text-xs font-bold uppercase tracking-widest text-pink-500 mb-2" id="ap-stt">Cấu trúc #1</div>
+          <div class="text-2xl md:text-3xl font-extrabold text-slate-800 transition" id="ap-phrase">a vehicle for sth</div>
+          <div class="text-base md:text-lg text-rose-600 font-semibold mt-3" id="ap-meaning">một phương tiện để đạt được cái gì</div>
+        </div>
+
+        <!-- Player Controls -->
+        <div class="mt-6 flex items-center justify-center gap-4">
+          <button id="btn-ap-prev" class="p-3 bg-white border border-pink-200 rounded-2xl text-slate-600 hover:bg-pink-50 hover:text-pink-600 transition shadow-sm text-lg">
+            ⏮️
+          </button>
+          <button id="btn-ap-play-toggle" class="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full flex items-center justify-center text-2xl shadow-lg shadow-pink-300 hover:scale-105 active:scale-95 transition">
+            <span id="ap-play-icon">▶️</span>
+          </button>
+          <button id="btn-ap-next" class="p-3 bg-white border border-pink-200 rounded-2xl text-slate-600 hover:bg-pink-50 hover:text-pink-600 transition shadow-sm text-lg">
+            ⏭️
+          </button>
+        </div>
+
+        <div class="mt-4 flex items-center justify-center gap-6 text-xs text-slate-500">
+          <label class="flex items-center gap-1.5 cursor-pointer">
+            <input type="checkbox" id="ap-loop-toggle" checked class="rounded text-pink-500 focus:ring-pink-400" />
+            <span>Tự động chuyển câu sau khi đọc</span>
+          </label>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 3: FLASHCARDS 3D -->
+    <main id="tab-flashcards" class="tab-pane hidden space-y-6">
+      <div class="bg-white/80 backdrop-blur-md border border-pink-200 rounded-3xl p-5 shadow-lg shadow-pink-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div>
+          <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+            <span>🎴</span> Thẻ Ghi Nhớ 3D (Flashcards)
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">Nhấp vào thẻ để lật xem nghĩa tiếng Việt & ghi nhớ nhanh</p>
+        </div>
+        <div class="flex items-center gap-2 flex-wrap">
+          <button id="btn-fc-shuffle" class="px-3.5 py-2 bg-pink-100 hover:bg-pink-200 text-pink-700 rounded-2xl text-xs font-bold transition flex items-center gap-1">
+            <span>🔀</span><span>Trộn thẻ</span>
+          </button>
+          <select id="fc-deck-filter" class="px-3 py-2 bg-pink-50 border border-pink-200 rounded-2xl text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-pink-400">
+            <option value="all">Tất cả (358 thẻ)</option>
+            <option value="unlearned">Chưa thuộc</option>
+            <option value="starred">Đã lưu ⭐</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Flashcard Arena -->
+      <div class="max-w-xl mx-auto">
+        <!-- Progress info -->
+        <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-2 px-2">
+          <span>Thẻ <span id="fc-current-index" class="text-pink-600">1</span> / <span id="fc-total-cards">358</span></span>
+          <span id="fc-status-badge" class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">Đang học</span>
+        </div>
+        <!-- Progress bar -->
+        <div class="w-full h-2 bg-pink-100 rounded-full overflow-hidden mb-6">
+          <div id="fc-progress-fill" class="h-full bg-gradient-to-r from-pink-500 to-rose-500 transition-all duration-300" style="width: 1%;"></div>
+        </div>
+
+        <!-- 3D Card Container -->
+        <div class="perspective-1000 w-full h-80 cursor-pointer select-none" id="fc-card-flipper">
+          <div id="fc-card-inner" class="relative w-full h-full transform-style-3d transition-transform duration-500 shadow-xl rounded-3xl">
+            
+            <!-- Front Face (English) -->
+            <div class="absolute inset-0 w-full h-full backface-hidden bg-gradient-to-br from-white via-pink-50/40 to-rose-50 border-2 border-pink-300 rounded-3xl p-6 flex flex-col justify-between items-center text-center">
+              <div class="w-full flex justify-between items-center">
+                <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-bold" id="fc-front-stt">STT 1</span>
+                <button id="btn-fc-star" class="text-2xl text-slate-300 hover:text-amber-400 transition" title="Lưu từ">⭐</button>
+              </div>
+
+              <div class="my-auto">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight" id="fc-front-phrase">
+                  a vehicle for sth
+                </h3>
+                <div class="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white border border-pink-200 shadow-sm text-xs font-semibold text-pink-600">
+                  <span>Nhấn nút loa để nghe:</span>
+                  <button id="btn-fc-speak-front" class="p-1 rounded-full hover:bg-pink-100 text-sm">🔊</button>
+                </div>
+              </div>
+
+              <div class="text-xs text-slate-400 font-medium">
+                👆 Nhấp vào thẻ để xem nghĩa tiếng Việt
+              </div>
+            </div>
+
+            <!-- Back Face (Vietnamese) -->
+            <div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-pink-600 via-rose-600 to-fuchsia-600 text-white rounded-3xl p-6 flex flex-col justify-between items-center text-center shadow-2xl">
+              <div class="w-full flex justify-between items-center text-pink-200 text-xs font-bold">
+                <span id="fc-back-stt">STT 1</span>
+                <span>Nghĩa tiếng Việt</span>
+              </div>
+
+              <div class="my-auto px-4">
+                <p class="text-xl md:text-2xl font-bold leading-relaxed" id="fc-back-meaning">
+                  một phương tiện để đạt được cái gì
+                </p>
+                <div class="mt-3 text-xs text-pink-200 font-mono" id="fc-back-phrase-preview">
+                  a vehicle for sth
+                </div>
+              </div>
+
+              <div class="text-xs text-pink-200">
+                👆 Nhấp để lật lại mặt trước
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Flashcard Action Buttons -->
+        <div class="mt-6 flex items-center justify-between gap-3">
+          <button id="btn-fc-prev" class="px-4 py-3 bg-white border border-pink-200 hover:bg-pink-50 rounded-2xl text-slate-700 font-bold text-sm shadow-sm transition">
+            ◀ Trước
+          </button>
+          
+          <div class="flex items-center gap-2">
+            <button id="btn-fc-mark-unlearned" class="px-3.5 py-3 bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-700 font-bold rounded-2xl text-xs transition">
+              Cần ôn lại ⏳
+            </button>
+            <button id="btn-fc-mark-learned" class="px-4 py-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-700 font-bold rounded-2xl text-xs transition">
+              Đã thuộc ✅
+            </button>
+          </div>
+
+          <button id="btn-fc-next" class="px-4 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white hover:opacity-95 rounded-2xl font-bold text-sm shadow-md shadow-pink-200 transition">
+            Sau ▶
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 4: COMPREHENSIVE QUIZ -->
+    <main id="tab-quiz" class="tab-pane hidden space-y-6">
+      
+      <!-- Quiz Setup Screen -->
+      <div id="quiz-setup-view" class="bg-white/90 backdrop-blur-md border border-pink-200 rounded-3xl p-6 md:p-8 shadow-xl shadow-pink-100 max-w-2xl mx-auto">
+        <div class="text-center mb-6">
+          <div class="inline-block p-3 rounded-2xl bg-gradient-to-tr from-pink-100 to-rose-100 text-3xl mb-3">
+            📝
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">
+            Bài Tập Trắc Nghiệm Tổng Hợp
+          </h2>
+          <p class="text-slate-500 text-sm mt-1">
+            Kiểm tra mức độ thành thạo cấu trúc & giới từ với hệ thống chấm điểm và giải thích tức thì!
+          </p>
+        </div>
+
+        <div class="space-y-5">
+          <!-- Question Count Selection -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Số lượng câu hỏi:</label>
+            <div class="grid grid-cols-4 gap-2.5" id="quiz-count-options">
+              <button data-count="10" class="quiz-count-btn active py-2.5 rounded-2xl border-2 border-pink-500 bg-pink-50 text-pink-700 font-bold text-sm">10 Câu</button>
+              <button data-count="20" class="quiz-count-btn py-2.5 rounded-2xl border border-pink-200 hover:border-pink-400 bg-white text-slate-700 font-bold text-sm">20 Câu</button>
+              <button data-count="30" class="quiz-count-btn py-2.5 rounded-2xl border border-pink-200 hover:border-pink-400 bg-white text-slate-700 font-bold text-sm">30 Câu</button>
+              <button data-count="50" class="quiz-count-btn py-2.5 rounded-2xl border border-pink-200 hover:border-pink-400 bg-white text-slate-700 font-bold text-sm">50 Câu</button>
+            </div>
+          </div>
+
+          <!-- Question Mode Selection -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Dạng bài tập:</label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5" id="quiz-type-options">
+              <button data-type="mixed" class="quiz-type-btn active p-3 rounded-2xl border-2 border-pink-500 bg-pink-50 text-pink-700 font-bold text-xs text-left">
+                🎲 Trộn Tổng Hợp
+                <div class="text-[10px] text-pink-500 font-normal mt-0.5">Kết hợp điền từ & nghĩa</div>
+              </button>
+              <button data-type="prep" class="quiz-type-btn p-3 rounded-2xl border border-pink-200 bg-white text-slate-700 font-bold text-xs text-left">
+                🎯 Điền Giới Từ
+                <div class="text-[10px] text-slate-400 font-normal mt-0.5">Tìm giới từ đúng</div>
+              </button>
+              <button data-type="meaning" class="quiz-type-btn p-3 rounded-2xl border border-pink-200 bg-white text-slate-700 font-bold text-xs text-left">
+                📖 Dịch Nghĩa
+                <div class="text-[10px] text-slate-400 font-normal mt-0.5">Chọn nghĩa tương ứng</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Source Deck Filter -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Phạm vi câu hỏi:</label>
+            <select id="quiz-source-select" class="w-full px-4 py-3 bg-pink-50/50 border border-pink-200 rounded-2xl text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-pink-400">
+              <option value="all">Toàn bộ 358 cấu trúc</option>
+              <option value="unlearned">Chỉ các câu chưa thuộc</option>
+              <option value="starred">Chỉ các câu đã lưu ⭐</option>
+            </select>
+          </div>
+
+          <button id="btn-quiz-start" class="w-full py-4 bg-gradient-to-r from-pink-500 via-rose-500 to-fuchsia-500 text-white font-extrabold text-base rounded-2xl shadow-lg shadow-pink-300 hover:scale-[1.01] active:scale-[0.99] transition cursor-pointer mt-4">
+            🚀 Bắt Đầu Làm Bài Ngay
+          </button>
+        </div>
+      </div>
+
+      <!-- Active Quiz Interface -->
+      <div id="quiz-active-view" class="hidden bg-white/95 backdrop-blur-md border border-pink-200 rounded-3xl p-6 md:p-8 shadow-xl shadow-pink-100 max-w-2xl mx-auto">
+        <!-- Top Status Bar -->
+        <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full bg-pink-100 text-pink-700" id="q-counter">Câu 1 / 10</span>
+            <span class="text-amber-500" id="q-streak-badge">🔥 0 streak</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-slate-400" id="q-timer">⏱️ 00:00</span>
+            <span class="text-emerald-600 font-bold" id="q-score">Điểm: 0</span>
+          </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="w-full h-2 bg-pink-100 rounded-full overflow-hidden mb-6">
+          <div id="q-progress-bar" class="h-full bg-gradient-to-r from-pink-500 to-rose-500 transition-all duration-300" style="width: 10%;"></div>
+        </div>
+
+        <!-- Question Prompt Box -->
+        <div class="p-6 bg-gradient-to-br from-pink-50/60 to-rose-50/60 border border-pink-200 rounded-2xl mb-6 text-center">
+          <div class="text-xs font-bold text-pink-600 uppercase tracking-widest mb-2" id="q-type-badge">Điền giới từ</div>
+          <div class="text-xl md:text-2xl font-extrabold text-slate-800" id="q-text">
+            be addicted _____ sth
+          </div>
+          <div class="text-sm text-slate-500 mt-2 font-medium" id="q-subtext">
+            (Nghĩa: nghiện cái gì)
+          </div>
+          <button id="btn-q-speak" class="mt-3 inline-flex items-center gap-1 px-3 py-1 bg-white border border-pink-200 rounded-full text-xs font-bold text-pink-600 hover:bg-pink-100 transition shadow-sm">
+            <span>🔊</span><span>Nghe phát âm</span>
+          </button>
+        </div>
+
+        <!-- 4 Options -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="q-options-container">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Instant Explanation & Next Button -->
+        <div id="q-feedback-box" class="hidden mt-6 p-4 rounded-2xl bg-white border-2 text-left">
+          <div class="flex items-start justify-between">
+            <div>
+              <div class="text-sm font-bold" id="q-feedback-verdict"></div>
+              <div class="text-xs text-slate-600 mt-1" id="q-feedback-detail"></div>
+            </div>
+            <button id="btn-q-star-this" class="text-xl hover:scale-110 transition" title="Lưu lại để ôn">⭐</button>
+          </div>
+          <button id="btn-q-next" class="mt-4 w-full py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-xl shadow-md hover:opacity-95 transition">
+            Câu Kế Tiếp ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- Quiz Summary / Results Screen -->
+      <div id="quiz-summary-view" class="hidden bg-white/95 backdrop-blur-md border border-pink-200 rounded-3xl p-6 md:p-8 shadow-xl shadow-pink-100 max-w-2xl mx-auto text-center">
+        <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-amber-400 to-pink-500 text-white text-4xl flex items-center justify-center shadow-lg shadow-pink-200 mb-4 animate-bounce">
+          🏆
+        </div>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800" id="qr-title">
+          Hoàn Thành Xuất Sắc!
+        </h2>
+        <p class="text-slate-500 text-sm mt-1" id="qr-message">
+          Bạn đã hoàn thành bài kiểm tra trắc nghiệm tổng hợp.
+        </p>
+
+        <!-- Score Breakdown Cards -->
+        <div class="grid grid-cols-3 gap-3 my-6">
+          <div class="p-4 bg-pink-50 border border-pink-200 rounded-2xl">
+            <div class="text-xs text-pink-600 font-semibold uppercase">Điểm số</div>
+            <div class="text-2xl font-black text-pink-700" id="qr-score-pct">100%</div>
+          </div>
+          <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-2xl">
+            <div class="text-xs text-emerald-600 font-semibold uppercase">Số câu đúng</div>
+            <div class="text-2xl font-black text-emerald-700" id="qr-correct-ratio">10/10</div>
+          </div>
+          <div class="p-4 bg-purple-50 border border-purple-200 rounded-2xl">
+            <div class="text-xs text-purple-600 font-semibold uppercase">Thời gian</div>
+            <div class="text-2xl font-black text-purple-700" id="qr-time-spent">01:45</div>
+          </div>
+        </div>
+
+        <!-- Wrong questions review (if any) -->
+        <div id="qr-wrong-section" class="hidden text-left mb-6">
+          <div class="text-sm font-bold text-rose-700 mb-2 flex items-center gap-1.5">
+            <span>❌</span><span>Các câu trả lời chưa đúng:</span>
+          </div>
+          <div class="space-y-2 max-h-60 overflow-y-auto pr-1" id="qr-wrong-list">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="flex items-center justify-center gap-3 flex-wrap">
+          <button id="btn-qr-retry" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-2xl shadow-md hover:opacity-95 transition">
+            🔄 Làm Bài Khác
+          </button>
+          <button id="btn-qr-retry-wrong" class="hidden px-5 py-3 bg-rose-100 hover:bg-rose-200 text-rose-700 font-bold rounded-2xl transition">
+            ⚡ Chỉ Làm Lại Câu Sai
+          </button>
+          <button id="btn-qr-go-directory" class="px-5 py-3 bg-white border border-pink-200 hover:bg-pink-50 text-slate-700 font-bold rounded-2xl transition">
+            📚 Xem Lại Danh Sách Từ
+          </button>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- TAB 5: MATCHING GAME -->
+    <main id="tab-matching" class="tab-pane hidden space-y-6">
+      <div class="bg-white/80 backdrop-blur-md border border-pink-200 rounded-3xl p-5 shadow-lg shadow-pink-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div>
+          <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+            <span>🎮</span> Trò Chơi Nối Cặp Từ Vựng
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">Ghép đúng cụm từ tiếng Anh với nghĩa tiếng Việt tương ứng</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="text-xs font-bold text-pink-600 bg-pink-100 px-3 py-1.5 rounded-full" id="mg-stats">
+            Ghép: <span id="mg-matched-count">0</span>/6 | Lượt: <span id="mg-turns">0</span>
+          </div>
+          <button id="btn-mg-reset" class="px-3.5 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-2xl text-xs font-bold shadow-sm transition hover:opacity-95">
+            🔄 Ván Mới
+          </button>
+        </div>
+      </div>
+
+      <!-- Matching Grid (12 cards) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-4xl mx-auto" id="mg-cards-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </main>
+
+    <!-- TAB 6: FAVORITES & NOTEBOOK -->
+    <main id="tab-favorites" class="tab-pane hidden space-y-6">
+      <div class="bg-white/80 backdrop-blur-md border border-pink-200 rounded-3xl p-5 shadow-lg shadow-pink-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div>
+          <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+            <span>⭐</span> Sổ Tay Từ Vựng Yêu Thích & Cần Ôn Tập
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">Những cấu trúc quan trọng bạn đã gắn sao để ôn luyện kỹ hơn</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btn-fav-practice-fc" class="px-3.5 py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-2xl text-xs font-bold transition shadow-sm flex items-center gap-1">
+            <span>🎴</span><span>Luyện Flashcard mục này</span>
+          </button>
+          <button id="btn-fav-clear" class="px-3 py-2 bg-pink-100 hover:bg-pink-200 text-pink-700 rounded-2xl text-xs font-bold transition">
+            Bỏ đánh dấu tất cả
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="fav-cards-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Toast Notification element -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none px-4 py-3 rounded-2xl shadow-xl border text-sm font-bold flex items-center gap-2">
+    <span id="toast-icon">✨</span>
+    <span id="toast-msg">Thông báo</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w-full text-center py-6 text-xs text-slate-500 border-t border-pink-200/60 mt-10 bg-white/40">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="font-semibold text-slate-600">🌟 Cẩm Nang Giới Từ & Cụm Từ Tiếng Anh Toàn Diện</p>
+      <p class="mt-1 text-slate-400">Trích xuất từ tài liệu 358 cấu trúc chuẩn • Thiết kế tối ưu cho học sinh, sinh viên & người tự học</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DATA & APP LOGIC -->
+  <script>
+    // Embedded Data: 358 items from docx
+    const RAW_ITEMS = [{"id": 1, "stt": "1", "phrase": "a vehicle for sth", "meaning": "một phương tiện để đạt được cái gì", "preps": ["for"]}, {"id": 2, "stt": "2", "phrase": "abide by sth = conform to/with sth = comply with sth = adhere to sth = follow/obey sth", "meaning": "tuân thủ điều gì đó", "preps": ["by", "to", "with"]}, {"id": 3, "stt": "3", "phrase": "adapt to sth = be adaptable to sth", "meaning": "thích nghi với cái gì", "preps": ["to"]}, {"id": 4, "stt": "4", "phrase": "add sth to sth / be added to sth", "meaning": "thêm cái gì vào cái gì / được thêm vào cái gì", "preps": ["to"]}, {"id": 5, "stt": "5", "phrase": "adjust to sth", "meaning": "điều chỉnh theo cái gì", "preps": ["to"]}, {"id": 6, "stt": "6", "phrase": "agree on/about/with sth / agree with sb about/on sth", "meaning": "đồng ý về điều gì / đồng ý với ai về điều gì", "preps": ["about", "on", "with"]}, {"id": 7, "stt": "7", "phrase": "ahead of time / behind time / on time / in time", "meaning": "trước thời hạn / muộn giờ / đúng giờ / kịp giờ", "preps": ["behind", "in", "of"]}, {"id": 8, "stt": "8", "phrase": "apart from", "meaning": "ngoại trừ, ngoài ra", "preps": ["from"]}, {"id": 9, "stt": "9", "phrase": "appeal to sb", "meaning": "kêu gọi / hấp dẫn, lôi cuốn ai đó", "preps": ["to"]}, {"id": 10, "stt": "10", "phrase": "approve of sth", "meaning": "tán thành, chấp thuận điều gì", "preps": ["of"]}, {"id": 11, "stt": "11", "phrase": "argue with sb about/over sth", "meaning": "tranh cãi với ai đó về điều gì", "preps": ["about", "over", "with"]}, {"id": 12, "stt": "12", "phrase": "arrive at sth / arrive in sth", "meaning": "đến địa điểm nhỏ (sân bay, nhà ga...) / đến địa điểm lớn (tên thành phố, quốc gia..)", "preps": ["at", "in"]}, {"id": 13, "stt": "13", "phrase": "assimilate sth into sth", "meaning": "hòa nhập cái gì vào cái gì", "preps": ["into"]}, {"id": 14, "stt": "14", "phrase": "at last >< at first", "meaning": "cuối cùng >< đầu tiên", "preps": ["at"]}, {"id": 15, "stt": "15", "phrase": "at least >< at most", "meaning": "ít nhất, tối thiểu >< tối đa", "preps": ["at"]}, {"id": 16, "stt": "16", "phrase": "at one's own pace", "meaning": "theo tốc độ của riêng mình", "preps": ["at"]}, {"id": 17, "stt": "17", "phrase": "at the end of sth / in the end / by the end of sth", "meaning": "cuối của cái gì / cuối cùng / tính đến cuối của cái gì", "preps": ["at", "by", "in"]}, {"id": 18, "stt": "18", "phrase": "attitude to/toward(s) sb/sth", "meaning": "thái độ đối với ai/cái gì", "preps": ["to"]}, {"id": 19, "stt": "19", "phrase": "be (dis)satisfied with sth", "meaning": "(không) hài lòng với điều gì", "preps": ["with"]}, {"id": 20, "stt": "20", "phrase": "be (in)capable of doing sth = be (un) able to do sth", "meaning": "(không) có khả năng làm việc gì", "preps": ["in", "of", "to"]}, {"id": 21, "stt": "21", "phrase": "be absent from sth", "meaning": "vắng mặt ở đâu", "preps": ["from"]}, {"id": 22, "stt": "22", "phrase": "be absorbed in sth", "meaning": "say mê, mải mê cái gì", "preps": ["in"]}, {"id": 23, "stt": "23", "phrase": "be addicted to sth = be hooked on sth", "meaning": "nghiện cái gì", "preps": ["on", "to"]}, {"id": 24, "stt": "24", "phrase": "be afraid of sb/sth/doing sth", "meaning": "sợ ai/cái gì/làm việc gì", "preps": ["of"]}, {"id": 25, "stt": "25", "phrase": "be allergic to sth", "meaning": "dị ứng với thứ gì", "preps": ["to"]}, {"id": 26, "stt": "26", "phrase": "be amazed at/by sth", "meaning": "ngạc nhiên bởi cái gì", "preps": ["at", "by"]}, {"id": 27, "stt": "27", "phrase": "be angry at/about/over sth", "meaning": "tức giận về điều gì", "preps": ["about", "at", "over"]}, {"id": 28, "stt": "28", "phrase": "be ashamed of sth", "meaning": "xấu hổ về điều gì", "preps": ["of"]}, {"id": 29, "stt": "29", "phrase": "be associated with sth", "meaning": "liên quan đến cái gì đó", "preps": ["with"]}, {"id": 30, "stt": "30", "phrase": "be astonished at/by sth", "meaning": "kinh ngạc với cái gì", "preps": ["at", "by"]}, {"id": 31, "stt": "31", "phrase": "be at an advantage / be at a disadvantage", "meaning": "ở thế thuận lợi, có lợi thế / ở thế bất lợi, gặp khó khăn", "preps": ["at"]}, {"id": 32, "stt": "32", "phrase": "be at stake/risk = be in danger", "meaning": "bị đe dọa, gặp nguy hiểm", "preps": ["at", "in"]}, {"id": 33, "stt": "33", "phrase": "be attached to sth", "meaning": "gắn với cái gì", "preps": ["to"]}, {"id": 34, "stt": "34", "phrase": "be attractive to sb", "meaning": "hấp dẫn với ai đó", "preps": ["to"]}, {"id": 35, "stt": "35", "phrase": "be available for sth / be available to sb", "meaning": "có sẵn cho cái gì / có sẵn cho ai", "preps": ["for", "to"]}, {"id": 36, "stt": "36", "phrase": "be aware of sth / be conscious of sth", "meaning": "nhận thức điều gì / có ý thức rõ ràng về điều gì đó", "preps": ["of"]}, {"id": 37, "stt": "37", "phrase": "be awash with sth", "meaning": "tràn ngập cái gì", "preps": ["with"]}, {"id": 38, "stt": "38", "phrase": "be based on sth", "meaning": "dựa trên cái gì", "preps": ["on"]}, {"id": 39, "stt": "39", "phrase": "be beneficial to sb/sth", "meaning": "có lợi cho ai/cái gì", "preps": ["to"]}, {"id": 40, "stt": "40", "phrase": "be bombarded with sth", "meaning": "bị tấn công/bủa vây bởi cái gì", "preps": ["with"]}, {"id": 41, "stt": "41", "phrase": "be/get bored with/of something", "meaning": "chán với/về cái gì", "preps": ["of", "with"]}, {"id": 42, "stt": "42", "phrase": "be busy with sth", "meaning": "bận rộn với việc gì", "preps": ["with"]}, {"id": 43, "stt": "43", "phrase": "be careful of/with/about sth", "meaning": "cẩn thận với cái gì", "preps": ["about", "of", "with"]}, {"id": 44, "stt": "44", "phrase": "be careless with/about sth", "meaning": "bất cẩn với điều gì", "preps": ["about", "with"]}, {"id": 45, "stt": "45", "phrase": "be close to sb/sth", "meaning": "gần gũi với ai/cái gì", "preps": ["to"]}, {"id": 46, "stt": "46", "phrase": "be committed to sth", "meaning": "quyết tâm, cam kết, tận tâm với điều gì", "preps": ["to"]}, {"id": 47, "stt": "47", "phrase": "be communicated to sb", "meaning": "được truyền đạt / được thông báo / được giao tiếp đến ai đó", "preps": ["to"]}, {"id": 48, "stt": "48", "phrase": "be composed of sth", "meaning": "được tạo thành từ, bao gồm các thành phần nào đó", "preps": ["of"]}, {"id": 49, "stt": "49", "phrase": "be compulsory for sb", "meaning": "bắt buộc đối với ai", "preps": ["for"]}, {"id": 50, "stt": "50", "phrase": "be concerned/worried about sth worry about sth", "meaning": "quan tâm/lo lắng điều gì lo lắng điều gì", "preps": ["about"]}, {"id": 51, "stt": "51", "phrase": "be connected with/to sth", "meaning": "được kết nối với cái gì", "preps": ["to", "with"]}, {"id": 52, "stt": "52", "phrase": "be credited with sth", "meaning": "được ghi nhận với cái gì", "preps": ["with"]}, {"id": 53, "stt": "53", "phrase": "be crowded with sb/sth", "meaning": "đông đúc, đầy ai/cái gì", "preps": ["with"]}, {"id": 54, "stt": "54", "phrase": "be dangerous for sb", "meaning": "nguy hiểm cho ai đó", "preps": ["for"]}, {"id": 55, "stt": "55", "phrase": "be dependent on sb/sth = depend on sb/sth", "meaning": "phụ thuộc vào ai/cái gì", "preps": ["on"]}, {"id": 56, "stt": "56", "phrase": "be diagnosed with sth", "meaning": "được chẩn đoán mắc bệnh gì", "preps": ["with"]}, {"id": 57, "stt": "57", "phrase": "be different from sb/sth", "meaning": "khác so với ai/cái gì", "preps": ["from"]}, {"id": 58, "stt": "58", "phrase": "be disappointed about/at/by/with sth", "meaning": "thất vọng về điều gì", "preps": ["about", "at", "by"]}, {"id": 59, "stt": "59", "phrase": "be enclosed with sth", "meaning": "kèm theo cái gì đó", "preps": ["with"]}, {"id": 60, "stt": "60", "phrase": "be enthusiastic about sth", "meaning": "nhiệt tình về điều gì", "preps": ["about"]}, {"id": 61, "stt": "61", "phrase": "be equal to sb/sth", "meaning": "ngang bằng với ai/cái gì", "preps": ["to"]}, {"id": 62, "stt": "62", "phrase": "be equipped with sth", "meaning": "được trang bị thứ gì", "preps": ["with"]}, {"id": 63, "stt": "63", "phrase": "be essential to/for sth", "meaning": "cần thiết cho cái gì", "preps": ["for", "to"]}, {"id": 64, "stt": "64", "phrase": "be excited about/at/by/for sth", "meaning": "phấn khích, hào hứng với việc gì", "preps": ["about", "at", "by"]}, {"id": 65, "stt": "65", "phrase": "be familiar to sb be familiar with sth", "meaning": "thân thuộc với ai cảm thấy quen thuộc với cái gì", "preps": ["to", "with"]}, {"id": 66, "stt": "66", "phrase": "be famous/well-known for sth", "meaning": "nổi tiếng vì điều gì", "preps": ["for"]}, {"id": 67, "stt": "67", "phrase": "be fed up with sth/doing sth", "meaning": "chán ngấy việc gì/làm việc gì đó", "preps": ["up", "with"]}, {"id": 68, "stt": "68", "phrase": "be filled with sth", "meaning": "chứa đầy thứ gì", "preps": ["with"]}, {"id": 69, "stt": "69", "phrase": "be fitted with sth", "meaning": "được trang bị cái gì", "preps": ["with"]}, {"id": 70, "stt": "70", "phrase": "be flooded with sth", "meaning": "ngập trong cái gì đó", "preps": ["with"]}, {"id": 71, "stt": "71", "phrase": "be for sale", "meaning": "được giao bán", "preps": ["for"]}, {"id": 72, "stt": "72", "phrase": "be free from sth", "meaning": "thoát khỏi cái gì", "preps": ["from"]}, {"id": 73, "stt": "73", "phrase": "be frightened of/about sth", "meaning": "sợ hãi về điều gì đó", "preps": ["about", "of"]}, {"id": 74, "stt": "74", "phrase": "be full of sth", "meaning": "đầy thứ gì đó", "preps": ["of"]}, {"id": 75, "stt": "75", "phrase": "be good at sth/doing sth be bad at sth/doing sth", "meaning": "giỏi (làm) việc gì đốt/kém (làm) việc gì", "preps": ["at"]}, {"id": 76, "stt": "76", "phrase": "be good for sb/sth be bad for sb/sth", "meaning": "tốt cho ai đó/cái gì đó không tốt cho ai/cái gì đó", "preps": ["for"]}, {"id": 77, "stt": "77", "phrase": "be grateful to sb for sth", "meaning": "biết ơn ai đó vì điều gì", "preps": ["for", "to"]}, {"id": 78, "stt": "78", "phrase": "be harmful to sth/sb", "meaning": "có hại cho ai/cái gì", "preps": ["to"]}, {"id": 79, "stt": "79", "phrase": "be high in sth", "meaning": "cái gì đó ở mức cao", "preps": ["in"]}, {"id": 80, "stt": "80", "phrase": "be home to sb/sth", "meaning": "là nơi cư trú của ai/loài nào", "preps": ["to"]}, {"id": 81, "stt": "81", "phrase": "be hopeful about sth", "meaning": "hy vọng về điều gì", "preps": ["about"]}, {"id": 82, "stt": "82", "phrase": "be hopeless at/with sth", "meaning": "rất kém, rất tệ, không có kĩ năng về cái gì", "preps": ["at", "with"]}, {"id": 83, "stt": "83", "phrase": "be hungry for sth", "meaning": "khao khát/thèm khát cái gì", "preps": ["for"]}, {"id": 84, "stt": "84", "phrase": "be ideal for sth", "meaning": "lý tưởng cho việc gì", "preps": ["for"]}, {"id": 85, "stt": "85", "phrase": "be impressed by/with/at sth", "meaning": "ấn tượng cái gì", "preps": ["at", "by", "with"]}, {"id": 86, "stt": "86", "phrase": "be in a queue", "meaning": "xếp hàng", "preps": ["in"]}, {"id": 87, "stt": "87", "phrase": "be in charge of sth", "meaning": "phụ trách việc gì", "preps": ["in", "of"]}, {"id": 88, "stt": "88", "phrase": "be in one’s teens", "meaning": "ở tuổi thiếu niên", "preps": ["in"]}, {"id": 89, "stt": "89", "phrase": "be in one’s twenties", "meaning": "ở độ tuổi đôi mươi", "preps": ["in"]}, {"id": 90, "stt": "90", "phrase": "be in support of sth/sb", "meaning": "ủng hộ ai/cái gì", "preps": ["in", "of"]}, {"id": 91, "stt": "91", "phrase": "be in the middle of sth", "meaning": "ở giữa của cái gì", "preps": ["in", "of"]}, {"id": 92, "stt": "92", "phrase": "be in use", "meaning": "đang được sử dụng", "preps": ["in"]}, {"id": 93, "stt": "93", "phrase": "be independent of sb/sth", "meaning": "độc lập, tự chủ với ai/cái gì", "preps": ["of"]}, {"id": 94, "stt": "94", "phrase": "be intended for/as sb/sth", "meaning": "dành cho ai/cái gì (thiết kế, lên kế hoạch dành cho ai/cái gì)", "preps": ["for"]}, {"id": 95, "stt": "95", "phrase": "be interested in sth/doing sth = be fond of sth/doing sth = be keen on doing sth = be keen to do sth", "meaning": "hứng thú với điều gì/làm gì", "preps": ["in", "of", "on"]}, {"id": 96, "stt": "96", "phrase": "be involved in sth/doing sth", "meaning": "tham gia vào cái gì/làm gì đó", "preps": ["in"]}, {"id": 97, "stt": "97", "phrase": "be knowledgeable about sth", "meaning": "có hiểu biết về cái gì", "preps": ["about"]}, {"id": 98, "stt": "98", "phrase": "be late for sth", "meaning": "muộn việc gì", "preps": ["for"]}, {"id": 99, "stt": "99", "phrase": "be linked to sth", "meaning": "được liên kết với cái gì đó", "preps": ["to"]}, {"id": 100, "stt": "100", "phrase": "be located/situated in sth", "meaning": "nằm ở đâu", "preps": ["in"]}, {"id": 101, "stt": "101", "phrase": "be made from sth be made of sth", "meaning": "được làm từ cái gì đó (nguyên liệu bị biến đổi hoàn toàn) được làm từ cái gì đó (nguyên liệu vẫn giữ nguyên dạng)", "preps": ["from", "of"]}, {"id": 102, "stt": "102", "phrase": "be made into a film", "meaning": "được dựng thành phim", "preps": ["into"]}, {"id": 103, "stt": "103", "phrase": "be made up of sth = be formed from sth", "meaning": "được tạo thành từ", "preps": ["from", "of", "up"]}, {"id": 104, "stt": "104", "phrase": "be met with suspicion", "meaning": "vấp phải sự nghi ngờ", "preps": ["with"]}, {"id": 105, "stt": "105", "phrase": "be mistaken about sth", "meaning": "nhầm lẫn về điều gì", "preps": ["about"]}, {"id": 106, "stt": "106", "phrase": "be mixed with sth", "meaning": "trộn lẫn với cái gì", "preps": ["with"]}, {"id": 107, "stt": "107", "phrase": "be named after sb/sth", "meaning": "được đặt theo tên của ai/cái gì", "preps": ["after"]}, {"id": 108, "stt": "108", "phrase": "be on business", "meaning": "đi công tác", "preps": ["on"]}, {"id": 109, "stt": "109", "phrase": "be on edge/verge of sth", "meaning": "trên bờ vực, sắp sửa bị", "preps": ["of", "on"]}, {"id": 110, "stt": "110", "phrase": "be on sale", "meaning": "đang được giảm giá", "preps": ["on"]}, {"id": 111, "stt": "111", "phrase": "be on the scene", "meaning": "có mặt tại hiện trường", "preps": ["on"]}, {"id": 112, "stt": "112", "phrase": "be on vacation", "meaning": "đang trong kỳ nghỉ", "preps": ["on"]}, {"id": 113, "stt": "113", "phrase": "be open to sth/sb", "meaning": "rộng mở đối với ai/cái gì", "preps": ["to"]}, {"id": 114, "stt": "114", "phrase": "be optimistic/pessimistic about sth", "meaning": "lạc quan/bi quan về điều gì", "preps": ["about"]}, {"id": 115, "stt": "115", "phrase": "be pleased with sb/sth", "meaning": "hài lòng với ai/cái gì", "preps": ["with"]}, {"id": 116, "stt": "116", "phrase": "be plugged in sth", "meaning": "cắm vào cái gì", "preps": ["in"]}, {"id": 117, "stt": "117", "phrase": "be popular with sb", "meaning": "phổ biến với ai", "preps": ["with"]}, {"id": 118, "stt": "118", "phrase": "be proud of sb/sth = take pride in sb/sth", "meaning": "tự hào về ai/điều gì", "preps": ["in", "of"]}, {"id": 119, "stt": "119", "phrase": "be qualified for sth", "meaning": "đủ tiêu chuẩn cho việc gì đó", "preps": ["for"]}, {"id": 120, "stt": "120", "phrase": "be quick at doing sth", "meaning": "nhạy bén trong việc làm gì", "preps": ["at"]}, {"id": 121, "stt": "121", "phrase": "be ready for sth", "meaning": "sẵn sàng cho cái gì", "preps": ["for"]}, {"id": 122, "stt": "122", "phrase": "be regretful about sth", "meaning": "hối tiếc về điều gì", "preps": ["about"]}, {"id": 123, "stt": "123", "phrase": "be related to sth", "meaning": "có liên quan đến cái gì", "preps": ["to"]}, {"id": 124, "stt": "124", "phrase": "be relevant to sth", "meaning": "liên quan đến cái gì", "preps": ["to"]}, {"id": 125, "stt": "125", "phrase": "be remembered as sb/sth", "meaning": "được nhớ đến như là ai/thứ gì", "preps": []}, {"id": 126, "stt": "126", "phrase": "be resistant to sth", "meaning": "chống chọi với cái gì", "preps": ["to"]}, {"id": 127, "stt": "127", "phrase": "be responsible for sth/doing sth be responsible with sth", "meaning": "chịu trách nhiệm về điều gì/làm điều gì có trách nhiệm với cái gì", "preps": ["for", "with"]}, {"id": 128, "stt": "128", "phrase": "be restricted to sth", "meaning": "bị giới hạn ở", "preps": ["to"]}, {"id": 129, "stt": "129", "phrase": "be rich in sth", "meaning": "giàu, có nhiều cái gì đó", "preps": ["in"]}, {"id": 130, "stt": "130", "phrase": "be scared of sb/sth", "meaning": "sợ cái gì", "preps": ["of"]}, {"id": 131, "stt": "131", "phrase": "be selfish about sth", "meaning": "ích kỷ về điều gì", "preps": ["about"]}, {"id": 132, "stt": "132", "phrase": "be sensitive to sth", "meaning": "nhạy cảm với cái gì", "preps": ["to"]}, {"id": 133, "stt": "133", "phrase": "be separate from sb/sth", "meaning": "tách biệt khỏi ai/cái gì", "preps": ["from"]}, {"id": 134, "stt": "134", "phrase": "be shocked at sth", "meaning": "bị sốc vì điều gì", "preps": ["at"]}, {"id": 135, "stt": "135", "phrase": "be short for sth", "meaning": "viết tắt cho cái gì", "preps": ["for"]}, {"id": 136, "stt": "136", "phrase": "be shortlisted for sth", "meaning": "được lọt vào danh sách gì", "preps": ["for"]}, {"id": 137, "stt": "137", "phrase": "be similar to sth", "meaning": "tương tự như cái gì", "preps": ["to"]}, {"id": 138, "stt": "138", "phrase": "be skilled at/in doing sth", "meaning": "khéo léo, có tay nghề làm gì", "preps": ["at", "in"]}, {"id": 139, "stt": "139", "phrase": "be special about sth", "meaning": "điều gì đó đặc biệt ở... / có điểm đặc biệt ở...", "preps": ["about"]}, {"id": 140, "stt": "140", "phrase": "be strange to sb", "meaning": "lạ lùng/xa lạ với ai", "preps": ["to"]}, {"id": 141, "stt": "141", "phrase": "be stressed about/out sth", "meaning": "căng thẳng vì điều gì", "preps": ["about", "out"]}, {"id": 142, "stt": "142", "phrase": "be successful in sth = succeed in sth", "meaning": "thành công trong việc gì", "preps": ["in"]}, {"id": 143, "stt": "143", "phrase": "be suitable for sb/sth", "meaning": "thích hợp với ai/cái gì", "preps": ["for"]}, {"id": 144, "stt": "144", "phrase": "be superior to sb/sth", "meaning": "vượt trội hơn ai/cái gì", "preps": ["to"]}, {"id": 145, "stt": "145", "phrase": "be surprised at/by sth", "meaning": "ngạc nhiên vì điều gì", "preps": ["at", "by"]}, {"id": 146, "stt": "146", "phrase": "be suspicious of sb/sth", "meaning": "nghi ngờ về ai/thứ gì", "preps": ["of"]}, {"id": 147, "stt": "147", "phrase": "be terrible at sth/doing sth", "meaning": "kém việc gì/làm việc gì", "preps": ["at"]}, {"id": 148, "stt": "148", "phrase": "be terrified of sth/doing sth", "meaning": "sợ việc gì/làm việc gì đó", "preps": ["of"]}, {"id": 149, "stt": "149", "phrase": "be thankful to sb for sth/doing sth", "meaning": "cảm ơn ai đó vì việc gì/làm việc gì", "preps": ["for", "to"]}, {"id": 150, "stt": "150", "phrase": "be tired of sth/doing sth", "meaning": "mệt mỏi vì việc gì/làm việc gì", "preps": ["of"]}, {"id": 151, "stt": "151", "phrase": "be under stress/pressure", "meaning": "chịu căng thẳng/áp lực", "preps": ["under"]}, {"id": 152, "stt": "152", "phrase": "be under the impression", "meaning": "ấn tượng sai lầm", "preps": ["under"]}, {"id": 153, "stt": "153", "phrase": "be upset about/at/over sth be upset with sb", "meaning": "buồn, thất vọng về việc gì buồn, thất vọng về ai", "preps": ["about", "at", "over"]}, {"id": 154, "stt": "154", "phrase": "be useful for/in sth/doing sth", "meaning": "hữu ích với cái gì/cho việc làm gì", "preps": ["for", "in"]}, {"id": 155, "stt": "155", "phrase": "be wary of", "meaning": "cảnh giác với, thận trọng với", "preps": ["of"]}, {"id": 156, "stt": "156", "phrase": "be worse off", "meaning": "trở nên tồi tệ hơn", "preps": ["off"]}, {"id": 157, "stt": "157", "phrase": "be worthy of sth", "meaning": "xứng đáng với điều gì", "preps": ["of"]}, {"id": 158, "stt": "158", "phrase": "be/get curious about sth", "meaning": "tò mò về cái gì", "preps": ["about"]}, {"id": 159, "stt": "159", "phrase": "be/stay connected with sth", "meaning": "giữ liên lạc, giữ kết nối với cái gì", "preps": ["with"]}, {"id": 160, "stt": "160", "phrase": "believe in sb/sth", "meaning": "tin vào ai/điều gì", "preps": ["in"]}, {"id": 161, "stt": "161", "phrase": "belong to sb", "meaning": "thuộc về ai đó", "preps": ["to"]}, {"id": 162, "stt": "162", "phrase": "benefit from sth", "meaning": "hưởng lợi từ cái gì", "preps": ["from"]}, {"id": 163, "stt": "163", "phrase": "beware of sth", "meaning": "coi chừng cái gì", "preps": ["of"]}, {"id": 164, "stt": "164", "phrase": "borrow sth from sb", "meaning": "mượn cái gì từ ai đó", "preps": ["from"]}, {"id": 165, "stt": "165", "phrase": "by contrast", "meaning": "ngược lại, trái lại", "preps": ["by"]}, {"id": 166, "stt": "166", "phrase": "by the way", "meaning": "nhân tiện, à này", "preps": ["by"]}, {"id": 167, "stt": "166", "phrase": "on the way to sth", "meaning": "trên đường tới đâu", "preps": ["on", "to"]}, {"id": 168, "stt": "168", "phrase": "in the way", "meaning": "cản trở, ngáng đường", "preps": ["in"]}, {"id": 169, "stt": "167", "phrase": "click on sth", "meaning": "bấm vào cái gì", "preps": ["on"]}, {"id": 170, "stt": "168", "phrase": "coincide with sth", "meaning": "trùng hợp với cái gì", "preps": ["with"]}, {"id": 171, "stt": "169", "phrase": "combine sth with sth", "meaning": "kết hợp cái gì với cái gì", "preps": ["with"]}, {"id": 172, "stt": "170", "phrase": "comment on sth", "meaning": "bình luận về điều gì", "preps": ["on"]}, {"id": 173, "stt": "171", "phrase": "communicate with sb", "meaning": "giao tiếp với ai", "preps": ["with"]}, {"id": 174, "stt": "172", "phrase": "compare sb/sth with/to sb/sth", "meaning": "so sánh ai với ai, so sánh cái gì với cái gì", "preps": ["to", "with"]}, {"id": 175, "stt": "173", "phrase": "compensate for sth", "meaning": "bù đắp, bồi thường cho cái gì", "preps": ["for"]}, {"id": 176, "stt": "176", "phrase": "compete against", "meaning": "cạnh tranh với, thi đấu chống lại", "preps": ["against"]}, {"id": 177, "stt": "177", "phrase": "compete for sth", "meaning": "cạnh tranh giành lấy cái gì", "preps": ["for"]}, {"id": 178, "stt": "178", "phrase": "compete in", "meaning": "cạnh tranh ở", "preps": ["in"]}, {"id": 179, "stt": "179", "phrase": "compete with", "meaning": "cạnh tranh với", "preps": ["with"]}, {"id": 180, "stt": "175", "phrase": "complain about sth", "meaning": "phàn nàn về điều gì", "preps": ["about"]}, {"id": 181, "stt": "176", "phrase": "compliment sb on sth", "meaning": "khen ngợi ai đó về điều gì", "preps": ["on"]}, {"id": 182, "stt": "177", "phrase": "concentrate on sth = focus on sth", "meaning": "tập trung vào cái gì", "preps": ["on"]}, {"id": 183, "stt": "178", "phrase": "confide in sb", "meaning": "tâm sự, thổ lộ với ai", "preps": ["in"]}, {"id": 184, "stt": "179", "phrase": "confuse sb with sth", "meaning": "khiến ai nhầm lẫn cái gì", "preps": ["with"]}, {"id": 185, "stt": "180", "phrase": "connect to sth", "meaning": "kết nối với, liên quan tới cái gì đó", "preps": ["to"]}, {"id": 186, "stt": "186", "phrase": "consist in", "meaning": "cốt ở, cốt tại, ở chỗ", "preps": ["in"]}, {"id": 187, "stt": "181", "phrase": "consist of", "meaning": "bao gồm", "preps": ["of"]}, {"id": 188, "stt": "182", "phrase": "contrary to sth", "meaning": "trái ngược với cái gì", "preps": ["to"]}, {"id": 189, "stt": "183", "phrase": "contribute to sth/doing sth", "meaning": "góp phần vào cái gì/làm cái gì", "preps": ["to"]}, {"id": 190, "stt": "184", "phrase": "cooperate with sb", "meaning": "hợp tác với ai đó", "preps": ["with"]}, {"id": 191, "stt": "185", "phrase": "crash sth into sth", "meaning": "đâm cái gì vào cái gì", "preps": ["into"]}, {"id": 192, "stt": "186", "phrase": "date back (to...) / date from... / date to...", "meaning": "đã có từ...", "preps": ["from", "to"]}, {"id": 193, "stt": "187", "phrase": "deal with = cope with", "meaning": "đối phó với", "preps": ["with"]}, {"id": 194, "stt": "188", "phrase": "decide on sth", "meaning": "quyết định điều gì", "preps": ["on"]}, {"id": 195, "stt": "189", "phrase": "describe sb/sth as sb/sth", "meaning": "miêu tả, coi ai/cái gì như là ai/cái gì", "preps": []}, {"id": 196, "stt": "190", "phrase": "detract from sth", "meaning": "làm giảm bớt cái gì", "preps": ["from"]}, {"id": 197, "stt": "191", "phrase": "disagree with sb on/over/about sth", "meaning": "không đồng ý với ai đó về điều gì", "preps": ["about", "on", "over"]}, {"id": 198, "stt": "192", "phrase": "discourage sb from doing sth", "meaning": "khiến cho ai không còn muốn làm gì", "preps": ["from"]}, {"id": 199, "stt": "193", "phrase": "discuss sth with sb", "meaning": "thảo luận cái gì với ai", "preps": ["with"]}, {"id": 200, "stt": "200", "phrase": "discuss with sb about sth", "meaning": "thảo luận với ai đó về điều gì", "preps": ["about", "with"]}, {"id": 201, "stt": "201", "phrase": "discuss sth = have a discussion about sth", "meaning": "thảo luận điều gì", "preps": ["about"]}, {"id": 202, "stt": "194", "phrase": "divide sb/sth into", "meaning": "chia ai/cái gì đó thành", "preps": ["into"]}, {"id": 203, "stt": "195", "phrase": "donate sth to sb", "meaning": "quyên góp, ủng hộ thứ gì cho ai", "preps": ["to"]}, {"id": 204, "stt": "196", "phrase": "dream of/about sth", "meaning": "mơ về điều gì", "preps": ["about", "of"]}, {"id": 205, "stt": "197", "phrase": "educate sb about sth", "meaning": "giáo dục ai về cái gì", "preps": ["about"]}, {"id": 206, "stt": "198", "phrase": "empathize with sb", "meaning": "đồng cảm với ai", "preps": ["with"]}, {"id": 207, "stt": "199", "phrase": "end up with sth", "meaning": "kết thúc với cái gì đó", "preps": ["up", "with"]}, {"id": 208, "stt": "200", "phrase": "engage in sth/doing sth", "meaning": "tham gia vào cái gì/làm cái gì", "preps": ["in"]}, {"id": 209, "stt": "201", "phrase": "engage sb in sth/doing sth", "meaning": "thu hút, lôi kéo ai vào việc gì/làm việc gì", "preps": ["in"]}, {"id": 210, "stt": "202", "phrase": "enquire about sth", "meaning": "hỏi/điều tra về điều gì", "preps": ["about"]}, {"id": 211, "stt": "203", "phrase": "escape from sb/sth", "meaning": "thoát khỏi ai/cái gì", "preps": ["from"]}, {"id": 212, "stt": "204", "phrase": "excel at/in sth/doing sth", "meaning": "xuất sắc, giỏi ở việc gì đó/làm việc gì", "preps": ["at", "in"]}, {"id": 213, "stt": "205", "phrase": "expert on sth", "meaning": "chuyên gia về cái gì", "preps": ["on"]}, {"id": 214, "stt": "206", "phrase": "explain sth to sb", "meaning": "giải thích điều gì đó cho ai", "preps": ["to"]}, {"id": 215, "stt": "207", "phrase": "familiarize sb with sth", "meaning": "giúp ai đó hiểu / làm quen với cái gì", "preps": ["with"]}, {"id": 216, "stt": "208", "phrase": "feel sorry for sth", "meaning": "cảm thấy có lỗi vì điều gì", "preps": ["for"]}, {"id": 217, "stt": "209", "phrase": "feel stressed from sth", "meaning": "cảm thấy căng thẳng từ cái gì", "preps": ["from"]}, {"id": 218, "stt": "210", "phrase": "feel thankful for sth", "meaning": "cảm thấy biết ơn vì điều gì", "preps": ["for"]}, {"id": 219, "stt": "211", "phrase": "fight against sth", "meaning": "chiến đấu chống lại cái gì đó", "preps": ["against"]}, {"id": 220, "stt": "220", "phrase": "fight for sth", "meaning": "chiến đấu vì điều gì", "preps": ["for"]}, {"id": 221, "stt": "212", "phrase": "for or against", "meaning": "ủng hộ hay phản đối", "preps": ["against", "for"]}, {"id": 222, "stt": "213", "phrase": "for the rest of one’s life", "meaning": "trong suốt quãng đời còn lại của ai đó", "preps": ["for", "of"]}, {"id": 223, "stt": "214", "phrase": "force sb away from sth", "meaning": "buộc ai đó tránh xa cái gì", "preps": ["from"]}, {"id": 224, "stt": "224", "phrase": "force sb out of sth", "meaning": "buộc ai ra khỏi cái gì", "preps": ["of", "out"]}, {"id": 225, "stt": "215", "phrase": "forget about sth", "meaning": "quên điều gì", "preps": ["about"]}, {"id": 226, "stt": "216", "phrase": "get/be angry with sb", "meaning": "tức giận với ai", "preps": ["with"]}, {"id": 227, "stt": "217", "phrase": "be glued to sth", "meaning": "dán mắt vào cái gì đó", "preps": ["to"]}, {"id": 228, "stt": "218", "phrase": "gossip about sth", "meaning": "buôn chuyện phiếm về việc gì", "preps": ["about"]}, {"id": 229, "stt": "219", "phrase": "graduate from sth", "meaning": "tốt nghiệp từ đâu", "preps": ["from"]}, {"id": 230, "stt": "220", "phrase": "help out", "meaning": "giúp đỡ, trợ giúp", "preps": ["out"]}, {"id": 231, "stt": "231", "phrase": "help sb with sth", "meaning": "giúp ai đó với cái gì", "preps": ["with"]}, {"id": 232, "stt": "221", "phrase": "identify with sb", "meaning": "đồng nhất với ai; đồng cảm với ai", "preps": ["with"]}, {"id": 233, "stt": "222", "phrase": "immerse oneself in sth", "meaning": "đắm mình vào cái gì", "preps": ["in"]}, {"id": 234, "stt": "223", "phrase": "impose on sb", "meaning": "áp đặt lên ai", "preps": ["on"]}, {"id": 235, "stt": "224", "phrase": "be in a panic", "meaning": "trong cơn hoảng loạn", "preps": ["in"]}, {"id": 236, "stt": "225", "phrase": "in advance", "meaning": "trước", "preps": ["in"]}, {"id": 237, "stt": "226", "phrase": "in brief", "meaning": "tóm lại", "preps": ["in"]}, {"id": 238, "stt": "227", "phrase": "in cash", "meaning": "bằng tiền mặt", "preps": ["in"]}, {"id": 239, "stt": "228", "phrase": "in conclusion", "meaning": "kết luận lại, nói tóm lại", "preps": ["in"]}, {"id": 240, "stt": "229", "phrase": "in contrast", "meaning": "ngược lại, trái lại", "preps": ["in"]}, {"id": 241, "stt": "230", "phrase": "in detail", "meaning": "một cách chi tiết", "preps": ["in"]}, {"id": 242, "stt": "231", "phrase": "in doubt", "meaning": "nghi ngờ", "preps": ["in"]}, {"id": 243, "stt": "232", "phrase": "in essence", "meaning": "về bản chất, về cơ bản", "preps": ["in"]}, {"id": 244, "stt": "233", "phrase": "in fact", "meaning": "trên thực tế", "preps": ["in"]}, {"id": 245, "stt": "234", "phrase": "in general = on the whole", "meaning": "nhìn chung, tổng quát", "preps": ["in", "on"]}, {"id": 246, "stt": "235", "phrase": "in honor of", "meaning": "vinh dự được", "preps": ["in", "of"]}, {"id": 247, "stt": "236", "phrase": "in need", "meaning": "cần", "preps": ["in"]}, {"id": 248, "stt": "248", "phrase": "in need of sth", "meaning": "đang cần cái gì", "preps": ["in", "of"]}, {"id": 249, "stt": "237", "phrase": "in particular", "meaning": "đặc biệt, cụ thể là", "preps": ["in"]}, {"id": 250, "stt": "238", "phrase": "in person", "meaning": "mặt đối mặt, trực tiếp", "preps": ["in"]}, {"id": 251, "stt": "239", "phrase": "in reality", "meaning": "trên thực tế", "preps": ["in"]}, {"id": 252, "stt": "240", "phrase": "in response to sth", "meaning": "đáp lại, hưởng ứng điều gì", "preps": ["in", "to"]}, {"id": 253, "stt": "241", "phrase": "in return", "meaning": "đáp lại / để đền đáp lại / để đổi lại", "preps": ["in"]}, {"id": 254, "stt": "242", "phrase": "in search of", "meaning": "đang tìm kiếm ...", "preps": ["in", "of"]}, {"id": 255, "stt": "243", "phrase": "in summary / to sum up / in short", "meaning": "nói tóm lại", "preps": ["in", "to", "up"]}, {"id": 256, "stt": "244", "phrase": "in the company of sb", "meaning": "ở cùng với ai đó", "preps": ["in", "of"]}, {"id": 257, "stt": "245", "phrase": "in the field of sth", "meaning": "trong lĩnh vực gì", "preps": ["in", "of"]}, {"id": 258, "stt": "246", "phrase": "in the wrong", "meaning": "sai", "preps": ["in"]}, {"id": 259, "stt": "247", "phrase": "in theory", "meaning": "về lý thuyết", "preps": ["in"]}, {"id": 260, "stt": "248", "phrase": "be in use", "meaning": "đang được sử dụng, đang dùng", "preps": ["in"]}, {"id": 261, "stt": "249", "phrase": "incline towards sth", "meaning": "có khuynh hướng / thiên về / nghiêng về điều gì đó", "preps": ["towards"]}, {"id": 262, "stt": "250", "phrase": "increase (n)/decrease (n) in sth", "meaning": "tăng/giảm cái gì", "preps": ["in"]}, {"id": 263, "stt": "251", "phrase": "inform sb of/about sth", "meaning": "thông báo cho ai về việc gì", "preps": ["about", "of"]}, {"id": 264, "stt": "252", "phrase": "interact with sb", "meaning": "tương tác với ai đó", "preps": ["with"]}, {"id": 265, "stt": "253", "phrase": "introduce sb/sth to sb/sth", "meaning": "giới thiệu ai/cái gì với ai/cái gì", "preps": ["to"]}, {"id": 266, "stt": "254", "phrase": "invest in sth", "meaning": "đầu tư vào cái gì", "preps": ["in"]}, {"id": 267, "stt": "255", "phrase": "involve sb (in sth/in doing sth)", "meaning": "lôi kéo ai đó vào việc gì/làm việc gì", "preps": ["in"]}, {"id": 268, "stt": "256", "phrase": "join in", "meaning": "tham gia vào", "preps": ["in"]}, {"id": 269, "stt": "257", "phrase": "judge sb by sth", "meaning": "đánh giá ai qua cái gì", "preps": ["by"]}, {"id": 270, "stt": "258", "phrase": "know of/about sth", "meaning": "biết về điều gì", "preps": ["about", "of"]}, {"id": 271, "stt": "259", "phrase": "lack of sth", "meaning": "việc thiếu cái gì đó", "preps": ["of"]}, {"id": 272, "stt": "260", "phrase": "laugh at sb/sth", "meaning": "cười nhạo ai/cái gì", "preps": ["at"]}, {"id": 273, "stt": "261", "phrase": "lead to sth", "meaning": "dẫn đến điều gì", "preps": ["to"]}, {"id": 274, "stt": "262", "phrase": "learn about sth", "meaning": "tìm hiểu về điều gì", "preps": ["about"]}, {"id": 275, "stt": "263", "phrase": "learn sth by heart", "meaning": "học thuộc lòng cái gì", "preps": ["by"]}, {"id": 276, "stt": "276", "phrase": "learn sth from sb", "meaning": "học hỏi điều gì từ ai", "preps": ["from"]}, {"id": 277, "stt": "264", "phrase": "leave comments on sth", "meaning": "để lại bình luận về điều gì", "preps": ["on"]}, {"id": 278, "stt": "265", "phrase": "leave sth behind", "meaning": "để, bỏ lại cái gì phía sau", "preps": ["behind"]}, {"id": 279, "stt": "266", "phrase": "lecture sb about sth", "meaning": "giảng cho ai về cái gì", "preps": ["about"]}, {"id": 280, "stt": "267", "phrase": "lend sth to sb", "meaning": "cho ai đó mượn cái gì đó", "preps": ["to"]}, {"id": 281, "stt": "268", "phrase": "lie on sth", "meaning": "nằm trên cái gì", "preps": ["on"]}, {"id": 282, "stt": "282", "phrase": "lie to sb", "meaning": "nói dối ai", "preps": ["to"]}, {"id": 283, "stt": "269", "phrase": "major in sth", "meaning": "chuyên ngành chính là gì", "preps": ["in"]}, {"id": 284, "stt": "270", "phrase": "mistake sb/sth for sb/sth", "meaning": "nhầm ai/cái gì với ai/cái gì", "preps": ["for"]}, {"id": 285, "stt": "271", "phrase": "mix with", "meaning": "hoà lẫn với", "preps": ["with"]}, {"id": 286, "stt": "272", "phrase": "nag sb about sth", "meaning": "cằn nhằn ai đó về chuyện gì", "preps": ["about"]}, {"id": 287, "stt": "273", "phrase": "on a basis", "meaning": "trên cơ sở, trên nền tảng", "preps": ["on"]}, {"id": 288, "stt": "274", "phrase": "on a regular basis", "meaning": "một cách thường xuyên", "preps": ["on"]}, {"id": 289, "stt": "275", "phrase": "on a small/large scale", "meaning": "trên quy mô nhỏ/lớn", "preps": ["on"]}, {"id": 290, "stt": "276", "phrase": "on arrival", "meaning": "khi tới nơi, lúc đến nơi", "preps": ["on"]}, {"id": 291, "stt": "277", "phrase": "on average", "meaning": "trung bình", "preps": ["on"]}, {"id": 292, "stt": "278", "phrase": "on demand", "meaning": "theo yêu cầu, theo nhu cầu", "preps": ["on"]}, {"id": 293, "stt": "279", "phrase": "on end", "meaning": "liền, liên tục", "preps": ["on"]}, {"id": 294, "stt": "280", "phrase": "on one's own", "meaning": "riêng mình, một mình", "preps": ["on"]}, {"id": 295, "stt": "281", "phrase": "on the basis of sth", "meaning": "dựa trên cái gì", "preps": ["of", "on"]}, {"id": 296, "stt": "282", "phrase": "on the corner of sth", "meaning": "ở góc của cái gì đó", "preps": ["of", "on"]}, {"id": 297, "stt": "283", "phrase": "on the left/right of sth", "meaning": "ở bên trái/phải của cái gì đó", "preps": ["of", "on"]}, {"id": 298, "stt": "284", "phrase": "on the outskirts of sth", "meaning": "ở ngoại ô của", "preps": ["of", "on"]}, {"id": 299, "stt": "285", "phrase": "be on trial", "meaning": "đang trong giai đoạn thử việc / thử nghiệm / đang bị xét xử / đang trong phiên toà", "preps": ["on"]}, {"id": 300, "stt": "286", "phrase": "be on vacation", "meaning": "đang trong kỳ nghỉ; đi nghỉ", "preps": ["on"]}, {"id": 301, "stt": "287", "phrase": "participate in = take part in", "meaning": "tham gia vào", "preps": ["in"]}, {"id": 302, "stt": "288", "phrase": "pay for sth", "meaning": "trả tiền cho cái gì", "preps": ["for"]}, {"id": 303, "stt": "289", "phrase": "point at sb/sth", "meaning": "chỉ vào ai/cái gì", "preps": ["at"]}, {"id": 304, "stt": "290", "phrase": "pose with sb/sth", "meaning": "tạo dáng với ai/thứ gì", "preps": ["with"]}, {"id": 305, "stt": "291", "phrase": "praise sb for sth", "meaning": "khen ngợi ai đó vì điều gì", "preps": ["for"]}, {"id": 306, "stt": "292", "phrase": "pray for sth", "meaning": "cầu nguyện cho điều gì", "preps": ["for"]}, {"id": 307, "stt": "293", "phrase": "prepare for", "meaning": "chuẩn bị cho", "preps": ["for"]}, {"id": 308, "stt": "294", "phrase": "prevent sb from sth/doing sth", "meaning": "ngăn chặn ai đó khỏi điều gì/làm việc gì", "preps": ["from"]}, {"id": 309, "stt": "295", "phrase": "prior to sth", "meaning": "trước cái gì đó", "preps": ["to"]}, {"id": 310, "stt": "296", "phrase": "protect sb/sth from sb/sth", "meaning": "bảo vệ ai/cái gì khỏi ai/cái gì", "preps": ["from"]}, {"id": 311, "stt": "297", "phrase": "protest against sth", "meaning": "phản đối cái gì, biểu tình chống lại cái gì", "preps": ["against"]}, {"id": 312, "stt": "298", "phrase": "provide sb with sth", "meaning": "cung cấp cho ai cái gì", "preps": ["with"]}, {"id": 313, "stt": "313", "phrase": "provide sth to/for sb", "meaning": "cung cấp cái gì đó cho ai đó", "preps": ["for", "to"]}, {"id": 314, "stt": "299", "phrase": "refer to sth", "meaning": "đề cập tới điều gì", "preps": ["to"]}, {"id": 315, "stt": "300", "phrase": "reflect on sth", "meaning": "suy ngẫm, ngẫm nghĩ về điều gì đó", "preps": ["on"]}, {"id": 316, "stt": "301", "phrase": "relate to sth", "meaning": "liên quan đến cái gì", "preps": ["to"]}, {"id": 317, "stt": "302", "phrase": "rely on", "meaning": "dựa vào, dựa trên", "preps": ["on"]}, {"id": 318, "stt": "303", "phrase": "remind sb about/of sth", "meaning": "nhắc ai đó về điều gì, gợi cho ai nhớ tới ai/cái gì", "preps": ["about", "of"]}, {"id": 319, "stt": "304", "phrase": "remove sth from sth", "meaning": "loại bỏ cái gì khỏi cái gì", "preps": ["from"]}, {"id": 320, "stt": "305", "phrase": "replace sth with/by sth", "meaning": "thay thế cái gì bằng cái gì", "preps": ["by", "with"]}, {"id": 321, "stt": "306", "phrase": "reply to sb/sth", "meaning": "trả lời/hồi đáp ai/cái gì đó", "preps": ["to"]}, {"id": 322, "stt": "307", "phrase": "resign from", "meaning": "từ chức", "preps": ["from"]}, {"id": 323, "stt": "308", "phrase": "respond to sth", "meaning": "trả lời, phản hồi cái gì", "preps": ["to"]}, {"id": 324, "stt": "309", "phrase": "result from", "meaning": "bắt nguồn từ điều gì (nguyên nhân)", "preps": ["from"]}, {"id": 325, "stt": "325", "phrase": "result in", "meaning": "dẫn đến điều gì (hậu quả)", "preps": ["in"]}, {"id": 326, "stt": "310", "phrase": "share sth with sb", "meaning": "chia sẻ/dùng chung cái gì với ai", "preps": ["with"]}, {"id": 327, "stt": "311", "phrase": "shop for sth", "meaning": "mua sắm thứ gì", "preps": ["for"]}, {"id": 328, "stt": "312", "phrase": "smell of sth", "meaning": "có mùi gì", "preps": ["of"]}, {"id": 329, "stt": "313", "phrase": "smile at sb", "meaning": "mỉm cười với ai", "preps": ["at"]}, {"id": 330, "stt": "314", "phrase": "specialize in sth", "meaning": "chuyên về điều gì", "preps": ["in"]}, {"id": 331, "stt": "315", "phrase": "stay away from", "meaning": "tránh xa khỏi", "preps": ["from"]}, {"id": 332, "stt": "316", "phrase": "straight away", "meaning": "ngay lập tức, không chậm trễ", "preps": []}, {"id": 333, "stt": "317", "phrase": "struggle with sth", "meaning": "đấu tranh/chật vật với cái gì", "preps": ["with"]}, {"id": 334, "stt": "318", "phrase": "study sth under sb", "meaning": "học cái gì đó dưới sự hướng dẫn của ai", "preps": ["under"]}, {"id": 335, "stt": "319", "phrase": "subscribe to sth", "meaning": "đăng ký/đặt cái gì", "preps": ["to"]}, {"id": 336, "stt": "320", "phrase": "substitute for sb/sth", "meaning": "thay thế cho ai/cái gì", "preps": ["for"]}, {"id": 337, "stt": "321", "phrase": "suffer from", "meaning": "chịu đựng, bị, mắc phải", "preps": ["from"]}, {"id": 338, "stt": "322", "phrase": "tap on sth", "meaning": "nhấn vào cái gì đó", "preps": ["on"]}, {"id": 339, "stt": "323", "phrase": "tease sb about sth", "meaning": "trêu chọc ai đó về điều gì", "preps": ["about"]}, {"id": 340, "stt": "340", "phrase": "tell about sth", "meaning": "kể về cái gì", "preps": ["about"]}, {"id": 341, "stt": "341", "phrase": "tell sb off for sth", "meaning": "mắng ai đó vì làm điều gì", "preps": ["for", "off"]}, {"id": 342, "stt": "324", "phrase": "tell sb apart", "meaning": "phân biệt được ai với ai", "preps": []}, {"id": 343, "stt": "325", "phrase": "thank sb for doing sth", "meaning": "cảm ơn ai đó đã làm gì", "preps": ["for"]}, {"id": 344, "stt": "326", "phrase": "thanks to sth/sb", "meaning": "nhờ có ai/cái gì", "preps": ["to"]}, {"id": 345, "stt": "327", "phrase": "to be honest with sb", "meaning": "thành thật với ai đó", "preps": ["to", "with"]}, {"id": 346, "stt": "328", "phrase": "to begin/start with", "meaning": "đầu tiên, trước tiên", "preps": ["to", "with"]}, {"id": 347, "stt": "329", "phrase": "transform sth into sth", "meaning": "chuyển đổi cái gì thành cái gì đó", "preps": ["into"]}, {"id": 348, "stt": "330", "phrase": "be under arrest", "meaning": "bị bắt giữ", "preps": ["under"]}, {"id": 349, "stt": "331", "phrase": "be under control", "meaning": "được kiểm soát", "preps": ["under"]}, {"id": 350, "stt": "350", "phrase": "be out of control", "meaning": "ngoài tầm kiểm soát", "preps": ["of", "out"]}, {"id": 351, "stt": "332", "phrase": "be under the influence of sb/sth", "meaning": "chịu ảnh hưởng của ai/cái gì", "preps": ["of", "under"]}, {"id": 352, "stt": "333", "phrase": "value sth over sth", "meaning": "coi trọng cái gì hơn cái gì", "preps": ["over"]}, {"id": 353, "stt": "334", "phrase": "view sb/sth as sb/sth", "meaning": "xem ai/cái gì như là ai/cái gì", "preps": []}, {"id": 354, "stt": "335", "phrase": "vote for", "meaning": "bầu cho, bỏ phiếu cho", "preps": ["for"]}, {"id": 355, "stt": "336", "phrase": "wait for sb/sth", "meaning": "chờ ai/cái gì", "preps": ["for"]}, {"id": 356, "stt": "337", "phrase": "wake sb up", "meaning": "đánh thức ai dậy", "preps": ["up"]}, {"id": 357, "stt": "338", "phrase": "warn sb about sth", "meaning": "cảnh báo ai đó về điều gì", "preps": ["about"]}, {"id": 358, "stt": "339", "phrase": "withdraw sth from", "meaning": "rút cái gì đó ra khỏi", "preps": ["from"]}];
+
+    // State
+    const AppState = {
+      items: RAW_ITEMS,
+      learnedSet: new Set(),
+      starredSet: new Set(),
+      soundEnabled: true,
+      speechRate: 1.0,
+      activeTab: 'directory',
+      // Directory state
+      dirSearchQuery: '',
+      dirPrepFilter: 'all',
+      dirStatusFilter: 'all',
+      // Listening state
+      listenMode: 'quiz',
+      lqCurrentItem: null,
+      lqScore: 0,
+      lqCurrentIdx: 1,
+      lqTotal: 20,
+      ldCurrentItem: null,
+      ldStreak: 0,
+      ldCurrentIdx: 1,
+      apPlaying: false,
+      apIndex: 0,
+      apTimer: null,
+      // Flashcard state
+      fcList: [],
+      fcIndex: 0,
+      fcFlipped: false,
+      // Quiz state
+      quizQuestions: [],
+      quizIndex: 0,
+      quizScore: 0,
+      quizStreak: 0,
+      quizWrongList: [],
+      quizTimerSec: 0,
+      quizTimerInterval: null,
+      quizTotalCount: 10,
+      quizType: 'mixed',
+      quizSource: 'all',
+      // Matching game state
+      mgCards: [],
+      mgSelected: null,
+      mgMatchedPairs: 0,
+      mgTurns: 0,
+      mgLock: false
+    };
+
+    // Load LocalStorage Safely
+    try {
+      const savedLearned = localStorage.getItem('preps_learned');
+      if (savedLearned) AppState.learnedSet = new Set(JSON.parse(savedLearned));
+      const savedStarred = localStorage.getItem('preps_starred');
+      if (savedStarred) AppState.starredSet = new Set(JSON.parse(savedStarred));
+      const savedSound = localStorage.getItem('preps_sound');
+      if (savedSound !== null) AppState.soundEnabled = JSON.parse(savedSound);
+    } catch (e) {
+      console.warn('LocalStorage not available');
+    }
+
+    function saveStorage() {
+      try {
+        localStorage.setItem('preps_learned', JSON.stringify(Array.from(AppState.learnedSet)));
+        localStorage.setItem('preps_starred', JSON.stringify(Array.from(AppState.starredSet)));
+        localStorage.setItem('preps_sound', JSON.stringify(AppState.soundEnabled));
+      } catch (e) {}
+    }
+
+    // Web Audio API Synthesizer
+    let audioCtx = null;
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) audioCtx = new AudioContext();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSound(type) {
+      if (!AppState.soundEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const now = ctx.currentTime;
+        if (type === 'correct') {
+          // Two cheerful sine chime tones (C5, G5)
+          const osc1 = ctx.createOscillator();
+          const gain1 = ctx.createGain();
+          osc1.type = 'sine';
+          osc1.frequency.setValueAtTime(523.25, now);
+          osc1.frequency.exponentialRampToValueAtTime(783.99, now + 0.15);
+          gain1.gain.setValueAtTime(0.2, now);
+          gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+          osc1.connect(gain1);
+          gain1.connect(ctx.destination);
+          osc1.start(now);
+          osc1.stop(now + 0.35);
+        } else if (type === 'wrong') {
+          // Low gentle thud buzz
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(180, now);
+          osc.frequency.linearRampToValueAtTime(110, now + 0.25);
+          gain.gain.setValueAtTime(0.18, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.25);
+        } else if (type === 'click') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(600, now);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.05);
+        } else if (type === 'fanfare') {
+          // Upbeat arpeggio
+          const notes = [523.25, 659.25, 783.99, 1046.50];
+          notes.forEach((freq, idx) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            const t = now + idx * 0.1;
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, t);
+            gain.gain.setValueAtTime(0.2, t);
+            gain.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(t);
+            osc.stop(t + 0.3);
+          });
+        }
+      } catch (err) {}
+    }
+
+    // Text to Speech (TTS)
+    function cleanForTTS(phrase) {
+      let t = phrase;
+      // If there are multiple synonyms separated by '=', pick the primary phrase
+      if (t.includes('=')) {
+        t = t.split('=')[0].trim();
+      }
+      // Expand sth, sb
+      t = t.replace(/\bsth\b/gi, 'something');
+      t = t.replace(/\bsb\b/gi, 'somebody');
+      t = t.replace(/\/\s*/g, ' or ');
+      return t;
+    }
+
+    function speakText(text, callback) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const clean = cleanForTTS(text);
+      const utter = new SpeechSynthesisUtterance(clean);
+      utter.lang = 'en-US';
+      utter.rate = AppState.speechRate;
+      // Try to find English voice
+      const voices = window.speechSynthesis.getVoices();
+      const enVoice = voices.find(v => v.lang.startsWith('en-US') || v.lang.startsWith('en-GB') || v.lang.startsWith('en'));
+      if (enVoice) utter.voice = enVoice;
+      if (callback) utter.onend = callback;
+      window.speechSynthesis.speak(utter);
+    }
+
+    // Toast UI
+    function showToast(msg, icon = '✨', bg = 'bg-slate-900', text = 'text-white') {
+      const t = document.getElementById('toast');
+      const tm = document.getElementById('toast-msg');
+      const ti = document.getElementById('toast-icon');
+      tm.textContent = msg;
+      ti.textContent = icon;
+      t.className = `fixed bottom-6 right-6 z-50 transform translate-y-0 opacity-100 transition-all duration-300 pointer-events-none px-4 py-3 rounded-2xl shadow-xl border border-pink-300 ${bg} ${text} text-sm font-bold flex items-center gap-2`;
+      setTimeout(() => {
+        t.className = 'fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none px-4 py-3 rounded-2xl shadow-xl border text-sm font-bold flex items-center gap-2';
+      }, 2200);
+    }
+
+    // Confetti Effect
+    function triggerConfetti() {
+      const canvas = document.getElementById('confetti-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const pieces = [];
+      const colors = ['#f43f5e', '#ec4899', '#d946ef', '#8b5cf6', '#fbbf24', '#34d399', '#38bdf8'];
+      for (let i = 0; i < 90; i++) {
+        pieces.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          size: Math.random() * 8 + 6,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 4,
+          vy: Math.random() * 4 + 3,
+          rot: Math.random() * 360,
+          vrot: (Math.random() - 0.5) * 10
+        });
+      }
+
+      let frames = 0;
+      function render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        pieces.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.rot += p.vrot;
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate((p.rot * Math.PI) / 180);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.7);
+          ctx.restore();
+        });
+        frames++;
+        if (frames < 140) {
+          requestAnimationFrame(render);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+      render();
+    }
+
+    // Update Header Counts
+    function updateHeaderStats() {
+      document.getElementById('header-learned-count').textContent = `${AppState.learnedSet.size} / ${AppState.items.length}`;
+      document.getElementById('header-starred-count').textContent = AppState.starredSet.size;
+    }
+
+    // TAB SWITCHING
+    function switchTab(tabId) {
+      AppState.activeTab = tabId;
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+      const activePane = document.getElementById('tab-' + tabId);
+      if (activePane) activePane.classList.remove('hidden');
+
+      // Update Nav Buttons
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.getAttribute('data-tab') === tabId) {
+          btn.className = 'nav-btn active flex items-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-sm transition shadow-sm whitespace-nowrap bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-pink-300';
+        } else {
+          btn.className = 'nav-btn flex items-center gap-2 px-4 py-2.5 rounded-2xl font-bold text-sm transition whitespace-nowrap bg-white/80 hover:bg-pink-50 text-slate-700 border border-pink-200/80';
+        }
+      });
+
+      // Tab specific initializers
+      if (tabId === 'directory') renderDirectory();
+      else if (tabId === 'listening') initListeningTab();
+      else if (tabId === 'flashcards') initFlashcardsTab();
+      else if (tabId === 'quiz') initQuizSetup();
+      else if (tabId === 'matching') initMatchingGame();
+      else if (tabId === 'favorites') renderFavoritesTab();
+    }
+
+    // ==========================================
+    // TAB 1: DIRECTORY & SEARCH
+    // ==========================================
+    const POPULAR_PREPS = ['all', 'in', 'to', 'with', 'of', 'for', 'on', 'about', 'from', 'at', 'by', 'under'];
+
+    function initDirectoryPills() {
+      const container = document.getElementById('prep-filter-pills');
+      container.innerHTML = '<span class="text-xs font-bold text-pink-600 uppercase tracking-wide mr-1">Giới từ:</span>';
+      
+      POPULAR_PREPS.forEach(p => {
+        const btn = document.createElement('button');
+        btn.setAttribute('data-prep', p);
+        const label = p === 'all' ? 'TẤT CẢ' : p.toUpperCase();
+        btn.textContent = label;
+        btn.className = p === AppState.dirPrepFilter 
+          ? 'px-3 py-1 rounded-xl text-xs font-bold bg-pink-500 text-white shadow-sm transition' 
+          : 'px-3 py-1 rounded-xl text-xs font-semibold bg-pink-50 hover:bg-pink-100 text-slate-700 border border-pink-200 transition';
+        btn.addEventListener('click', () => {
+          AppState.dirPrepFilter = p;
+          initDirectoryPills();
+          renderDirectory();
+        });
+        container.appendChild(btn);
+      });
+    }
+
+    function renderDirectory() {
+      const grid = document.getElementById('dir-cards-grid');
+      const q = AppState.dirSearchQuery.toLowerCase().trim();
+      const prep = AppState.dirPrepFilter;
+      const status = AppState.dirStatusFilter;
+
+      const filtered = AppState.items.filter(item => {
+        // Match Search Query
+        if (q) {
+          const matchPhrase = item.phrase.toLowerCase().includes(q);
+          const matchMeaning = item.meaning.toLowerCase().includes(q);
+          if (!matchPhrase && !matchMeaning) return false;
+        }
+        // Match Prep Filter
+        if (prep !== 'all') {
+          if (!item.preps.includes(prep)) return false;
+        }
+        // Match Status Filter
+        if (status === 'starred' && !AppState.starredSet.has(item.id)) return false;
+        if (status === 'learned' && !AppState.learnedSet.has(item.id)) return false;
+        if (status === 'unlearned' && AppState.learnedSet.has(item.id)) return false;
+        return true;
+      });
+
+      document.getElementById('dir-filtered-count').textContent = filtered.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-12 text-center bg-white/70 rounded-3xl border border-pink-200 p-8">
+            <div class="text-4xl mb-3">🔍</div>
+            <div class="text-lg font-bold text-slate-700">Không tìm thấy cấu trúc phù hợp</div>
+            <p class="text-xs text-slate-500 mt-1">Hãy thử tìm với từ khóa khác hoặc bỏ chọn bộ lọc</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Render cards
+      grid.innerHTML = filtered.map(item => {
+        const isStarred = AppState.starredSet.has(item.id);
+        const isLearned = AppState.learnedSet.has(item.id);
+
+        const prepBadges = item.preps.map(p => 
+          `<span class="px-2 py-0.5 rounded-lg bg-pink-100 text-pink-700 font-bold text-[10px] uppercase">${p}</span>`
+        ).join('');
+
+        return `
+          <div class="bg-white/90 backdrop-blur-sm border ${isLearned ? 'border-emerald-200 shadow-emerald-50' : 'border-pink-200/90 shadow-pink-100/50'} rounded-3xl p-5 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition duration-200 flex flex-col justify-between" id="card-${item.id}">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 font-bold text-xs">#${item.stt}</span>
+                  ${prepBadges}
+                </div>
+                <div class="flex items-center gap-1">
+                  <button class="btn-speak-word p-1.5 rounded-xl hover:bg-pink-100 text-pink-600 transition" data-phrase="${encodeURIComponent(item.phrase)}" title="Nghe phát âm">🔊</button>
+                  <button class="btn-star-word p-1.5 rounded-xl hover:bg-amber-100 text-base transition ${isStarred ? 'text-amber-400' : 'text-slate-300'}" data-id="${item.id}" title="Đánh dấu sao">⭐</button>
+                </div>
+              </div>
+
+              <!-- English phrase -->
+              <h3 class="text-base font-bold text-slate-900 leading-snug mt-1 text-pink-950">
+                ${item.phrase}
+              </h3>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-pink-100/80">
+              <p class="text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
+                ${item.meaning}
+              </p>
+              
+              <div class="mt-3 flex items-center justify-between gap-2">
+                <button class="btn-toggle-learned px-3 py-1 rounded-xl text-xs font-bold transition flex items-center gap-1 ${isLearned ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 hover:bg-pink-100 text-slate-600'}" data-id="${item.id}">
+                  <span>${isLearned ? '✅ Đã thuộc' : '○ Chưa thuộc'}</span>
+                </button>
+                <button class="btn-quick-quiz px-2.5 py-1 text-xs font-semibold text-pink-600 hover:bg-pink-50 rounded-xl transition" data-id="${item.id}">
+                  Luyện từ này ➔
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Attach Listeners
+      grid.querySelectorAll('.btn-speak-word').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const phrase = decodeURIComponent(btn.getAttribute('data-phrase'));
+          speakText(phrase);
+          playSound('click');
+        });
+      });
+
+      grid.querySelectorAll('.btn-star-word').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const id = parseInt(btn.getAttribute('data-id'));
+          if (AppState.starredSet.has(id)) {
+            AppState.starredSet.delete(id);
+            btn.classList.remove('text-amber-400');
+            btn.classList.add('text-slate-300');
+            showToast('Đã bỏ lưu cấu trúc', '⭐');
+          } else {
+            AppState.starredSet.add(id);
+            btn.classList.add('text-amber-400');
+            btn.classList.remove('text-slate-300');
+            showToast('Đã lưu vào danh sách yêu thích!', '⭐', 'bg-amber-500');
+          }
+          saveStorage();
+          updateHeaderStats();
+        });
+      });
+
+      grid.querySelectorAll('.btn-toggle-learned').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const id = parseInt(btn.getAttribute('data-id'));
+          if (AppState.learnedSet.has(id)) {
+            AppState.learnedSet.delete(id);
+          } else {
+            AppState.learnedSet.add(id);
+            playSound('correct');
+          }
+          saveStorage();
+          updateHeaderStats();
+          renderDirectory();
+        });
+      });
+
+      grid.querySelectorAll('.btn-quick-quiz').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const id = parseInt(btn.getAttribute('data-id'));
+          startSingleWordQuiz(id);
+        });
+      });
+    }
+
+    function startSingleWordQuiz(id) {
+      const target = AppState.items.find(it => it.id === id);
+      if (!target) return;
+      // Switch to quiz tab with this word
+      switchTab('quiz');
+      document.getElementById('quiz-setup-view').classList.add('hidden');
+      document.getElementById('quiz-active-view').classList.remove('hidden');
+      document.getElementById('quiz-summary-view').classList.add('hidden');
+
+      // Generate 5 questions including this target word
+      const otherPool = AppState.items.filter(it => it.id !== id);
+      const shuffledOthers = [...otherPool].sort(() => 0.5 - Math.random()).slice(0, 4);
+      const testList = [target, ...shuffledOthers].sort(() => 0.5 - Math.random());
+
+      AppState.quizQuestions = testList.map(it => createQuestionObj(it));
+      AppState.quizIndex = 0;
+      AppState.quizScore = 0;
+      AppState.quizStreak = 0;
+      AppState.quizWrongList = [];
+      AppState.quizTimerSec = 0;
+      startQuizTimer();
+      renderCurrentQuizQuestion();
+    }
+
+    // ==========================================
+    // TAB 2: LISTENING LAB
+    // ==========================================
+    function initListeningTab() {
+      setListeningMode(AppState.listenMode);
+    }
+
+    function setListeningMode(mode) {
+      AppState.listenMode = mode;
+      document.getElementById('listening-view-quiz').classList.add('hidden');
+      document.getElementById('listening-view-dictation').classList.add('hidden');
+      document.getElementById('listening-view-autoplay').classList.add('hidden');
+
+      document.querySelectorAll('.listen-mode-btn').forEach(btn => {
+        btn.className = 'listen-mode-btn px-3.5 py-2 rounded-xl text-xs font-bold transition text-slate-600 hover:text-pink-600';
+      });
+
+      if (mode === 'quiz') {
+        document.getElementById('listening-view-quiz').classList.remove('hidden');
+        document.getElementById('btn-listen-mode-quiz').className = 'listen-mode-btn active px-3.5 py-2 rounded-xl text-xs font-bold transition bg-white text-pink-600 shadow-sm';
+        loadNextListeningQuiz();
+      } else if (mode === 'dictation') {
+        document.getElementById('listening-view-dictation').classList.remove('hidden');
+        document.getElementById('btn-listen-mode-dictation').className = 'listen-mode-btn active px-3.5 py-2 rounded-xl text-xs font-bold transition bg-white text-pink-600 shadow-sm';
+        loadNextDictation();
+      } else if (mode === 'autoplay') {
+        document.getElementById('listening-view-autoplay').classList.remove('hidden');
+        document.getElementById('btn-listen-mode-autoplay').className = 'listen-mode-btn active px-3.5 py-2 rounded-xl text-xs font-bold transition bg-white text-pink-600 shadow-sm';
+        updateAutoplayCard();
+      }
+    }
+
+    // Mode A: Listening Quiz
+    function loadNextListeningQuiz() {
+      const items = AppState.items;
+      const target = items[Math.floor(Math.random() * items.length)];
+      AppState.lqCurrentItem = target;
+
+      document.getElementById('lq-current-num').textContent = AppState.lqCurrentIdx;
+      document.getElementById('lq-score').textContent = AppState.lqScore;
+      document.getElementById('lq-feedback-container').classList.add('hidden');
+
+      // Generate 4 Vietnamese choices (1 correct, 3 wrong)
+      const distractors = [...items.filter(it => it.id !== target.id)]
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3);
+      const options = [target, ...distractors].sort(() => 0.5 - Math.random());
+
+      const container = document.getElementById('lq-options-container');
+      container.innerHTML = options.map(opt => `
+        <button class="lq-option-btn p-4 rounded-2xl border-2 border-pink-100 hover:border-pink-300 bg-white text-slate-800 text-sm font-semibold transition flex items-start gap-2.5 hover:bg-pink-50/50 shadow-sm" data-id="${opt.id}">
+          <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-700 text-xs font-bold flex items-center justify-center shrink-0">?</span>
+          <span>${opt.meaning}</span>
+        </button>
+      `).join('');
+
+      container.querySelectorAll('.lq-option-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          handleListeningQuizChoice(parseInt(btn.getAttribute('data-id')), btn);
+        });
+      });
+
+      // Auto play speech
+      setTimeout(() => {
+        speakText(target.phrase);
+      }, 300);
+    }
+
+    function handleListeningQuizChoice(chosenId, btnElement) {
+      const target = AppState.lqCurrentItem;
+      const isCorrect = chosenId === target.id;
+      const container = document.getElementById('lq-options-container');
+
+      // Disable all buttons
+      container.querySelectorAll('.lq-option-btn').forEach(btn => {
+        btn.disabled = true;
+        const bId = parseInt(btn.getAttribute('data-id'));
+        if (bId === target.id) {
+          btn.className = 'lq-option-btn p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50 text-emerald-800 text-sm font-bold flex items-start gap-2.5 shadow-sm';
+        } else if (btn === btnElement && !isCorrect) {
+          btn.className = 'lq-option-btn p-4 rounded-2xl border-2 border-rose-500 bg-rose-50 text-rose-800 text-sm font-bold flex items-start gap-2.5 shadow-sm';
+        }
+      });
+
+      if (isCorrect) {
+        playSound('correct');
+        AppState.lqScore += 10;
+        document.getElementById('lq-score').textContent = AppState.lqScore;
+        document.getElementById('lq-feedback-title').textContent = 'Chính xác! 🎉';
+        document.getElementById('lq-feedback-title').className = 'text-xs font-bold uppercase tracking-wider text-emerald-600';
+      } else {
+        playSound('wrong');
+        document.getElementById('lq-feedback-title').textContent = 'Chưa chính xác! 💡';
+        document.getElementById('lq-feedback-title').className = 'text-xs font-bold uppercase tracking-wider text-rose-600';
+      }
+
+      document.getElementById('lq-revealed-phrase').textContent = target.phrase;
+      document.getElementById('lq-revealed-meaning').textContent = target.meaning;
+      document.getElementById('lq-feedback-container').classList.remove('hidden');
+    }
+
+    // Mode B: Dictation / Preposition Cloze
+    function loadNextDictation() {
+      const itemsWithPreps = AppState.items.filter(it => it.preps.length > 0);
+      const target = itemsWithPreps[Math.floor(Math.random() * itemsWithPreps.length)];
+      AppState.ldCurrentItem = target;
+
+      const targetPrep = target.preps[0];
+      // Create cloze sentence
+      const regex = new RegExp('\\b' + targetPrep + '\\b', 'i');
+      const clozeText = target.phrase.replace(regex, '_____');
+
+      document.getElementById('ld-current-num').textContent = AppState.ldCurrentIdx;
+      document.getElementById('ld-streak').textContent = AppState.ldStreak;
+      document.getElementById('ld-cloze-phrase').textContent = clozeText;
+      document.getElementById('ld-cloze-meaning').textContent = `(Nghĩa: ${target.meaning})`;
+      document.getElementById('ld-feedback-box').classList.add('hidden');
+
+      // Distractor prepositions
+      const common = ['to', 'with', 'for', 'about', 'at', 'in', 'on', 'from', 'of', 'by'];
+      const distractors = common.filter(p => p !== targetPrep).sort(() => 0.5 - Math.random()).slice(0, 3);
+      const options = [targetPrep, ...distractors].sort(() => 0.5 - Math.random());
+
+      const container = document.getElementById('ld-prep-options');
+      container.innerHTML = options.map(p => `
+        <button class="ld-prep-btn py-3 px-4 bg-white border-2 border-pink-200 hover:border-pink-500 rounded-2xl text-base font-extrabold text-slate-800 transition hover:bg-pink-50 shadow-sm" data-prep="${p}">
+          ${p}
+        </button>
+      `).join('');
+
+      container.querySelectorAll('.ld-prep-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          handleDictationChoice(btn.getAttribute('data-prep'), targetPrep, btn);
+        });
+      });
+
+      setTimeout(() => speakText(target.phrase), 300);
+    }
+
+    function handleDictationChoice(chosenPrep, correctPrep, btnElement) {
+      const isCorrect = chosenPrep.toLowerCase() === correctPrep.toLowerCase();
+      const container = document.getElementById('ld-prep-options');
+
+      container.querySelectorAll('.ld-prep-btn').forEach(btn => {
+        btn.disabled = true;
+        if (btn.getAttribute('data-prep').toLowerCase() === correctPrep.toLowerCase()) {
+          btn.className = 'ld-prep-btn py-3 px-4 bg-emerald-500 text-white rounded-2xl text-base font-extrabold shadow-md';
+        } else if (btn === btnElement && !isCorrect) {
+          btn.className = 'ld-prep-btn py-3 px-4 bg-rose-500 text-white rounded-2xl text-base font-extrabold shadow-md';
+        }
+      });
+
+      const fbBox = document.getElementById('ld-feedback-box');
+      const fbText = document.getElementById('ld-feedback-text');
+      fbBox.classList.remove('hidden');
+
+      if (isCorrect) {
+        playSound('correct');
+        AppState.ldStreak++;
+        fbText.innerHTML = `<span class="text-emerald-600 font-bold">Chính xác!</span> Cụm từ đầy đủ: <span class="font-extrabold text-pink-700">${AppState.ldCurrentItem.phrase}</span>`;
+      } else {
+        playSound('wrong');
+        AppState.ldStreak = 0;
+        fbText.innerHTML = `<span class="text-rose-600 font-bold">Chưa đúng!</span> Giới từ đúng là <span class="font-black underline">${correctPrep}</span>. Cụm từ: <span class="font-bold text-pink-700">${AppState.ldCurrentItem.phrase}</span>`;
+      }
+      document.getElementById('ld-streak').textContent = AppState.ldStreak;
+    }
+
+    // Mode C: Passive Autoplay
+    function updateAutoplayCard() {
+      const item = AppState.items[AppState.apIndex];
+      document.getElementById('ap-stt').textContent = `Cấu trúc #${item.stt} / ${AppState.items.length}`;
+      document.getElementById('ap-phrase').textContent = item.phrase;
+      document.getElementById('ap-meaning').textContent = item.meaning;
+    }
+
+    function triggerAutoplayStep() {
+      if (!AppState.apPlaying) return;
+      const item = AppState.items[AppState.apIndex];
+      updateAutoplayCard();
+      speakText(item.phrase, () => {
+        if (!AppState.apPlaying) return;
+        const autoAdvance = document.getElementById('ap-loop-toggle').checked;
+        if (autoAdvance) {
+          AppState.apTimer = setTimeout(() => {
+            if (!AppState.apPlaying) return;
+            AppState.apIndex = (AppState.apIndex + 1) % AppState.items.length;
+            triggerAutoplayStep();
+          }, 1800);
+        }
+      });
+    }
+
+    function toggleAutoplay() {
+      AppState.apPlaying = !AppState.apPlaying;
+      const icon = document.getElementById('ap-play-icon');
+      if (AppState.apPlaying) {
+        icon.textContent = '⏸️';
+        triggerAutoplayStep();
+      } else {
+        icon.textContent = '▶️';
+        clearTimeout(AppState.apTimer);
+        window.speechSynthesis.cancel();
+      }
+    }
+
+    // ==========================================
+    // TAB 3: FLASHCARDS 3D
+    // ==========================================
+    function initFlashcardsTab() {
+      const filter = document.getElementById('fc-deck-filter').value;
+      if (filter === 'starred') {
+        AppState.fcList = AppState.items.filter(it => AppState.starredSet.has(it.id));
+      } else if (filter === 'unlearned') {
+        AppState.fcList = AppState.items.filter(it => !AppState.learnedSet.has(it.id));
+      } else {
+        AppState.fcList = [...AppState.items];
+      }
+
+      if (AppState.fcList.length === 0) {
+        AppState.fcList = [...AppState.items];
+      }
+
+      AppState.fcIndex = 0;
+      AppState.fcFlipped = false;
+      renderCurrentFlashcard();
+    }
+
+    function renderCurrentFlashcard() {
+      if (AppState.fcList.length === 0) return;
+      const item = AppState.fcList[AppState.fcIndex];
+      const isStarred = AppState.starredSet.has(item.id);
+      const isLearned = AppState.learnedSet.has(item.id);
+
+      // Unflip card smoothly
+      AppState.fcFlipped = false;
+      document.getElementById('fc-card-inner').classList.remove('card-flipped');
+
+      // Update contents
+      document.getElementById('fc-current-index').textContent = AppState.fcIndex + 1;
+      document.getElementById('fc-total-cards').textContent = AppState.fcList.length;
+      document.getElementById('fc-front-stt').textContent = `STT #${item.stt}`;
+      document.getElementById('fc-back-stt').textContent = `STT #${item.stt}`;
+      document.getElementById('fc-front-phrase').textContent = item.phrase;
+      document.getElementById('fc-back-meaning').textContent = item.meaning;
+      document.getElementById('fc-back-phrase-preview').textContent = item.phrase;
+
+      const starBtn = document.getElementById('btn-fc-star');
+      starBtn.className = isStarred ? 'text-2xl text-amber-400' : 'text-2xl text-slate-300 hover:text-amber-400';
+
+      const statusBadge = document.getElementById('fc-status-badge');
+      if (isLearned) {
+        statusBadge.textContent = 'Đã thuộc ✅';
+        statusBadge.className = 'px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-bold';
+      } else {
+        statusBadge.textContent = 'Đang học';
+        statusBadge.className = 'px-2 py-0.5 rounded-full bg-slate-100 text-slate-600';
+      }
+
+      const pct = ((AppState.fcIndex + 1) / AppState.fcList.length) * 100;
+      document.getElementById('fc-progress-fill').style.width = pct + '%';
+    }
+
+    // ==========================================
+    // TAB 4: COMPREHENSIVE QUIZ
+    // ==========================================
+    function initQuizSetup() {
+      document.getElementById('quiz-setup-view').classList.remove('hidden');
+      document.getElementById('quiz-active-view').classList.add('hidden');
+      document.getElementById('quiz-summary-view').classList.add('hidden');
+      clearInterval(AppState.quizTimerInterval);
+    }
+
+    function createQuestionObj(item) {
+      const typeChoice = AppState.quizType === 'mixed'
+        ? (Math.random() > 0.45 ? 'prep' : 'meaning')
+        : AppState.quizType;
+
+      if (typeChoice === 'prep' && item.preps && item.preps.length > 0) {
+        const targetPrep = item.preps[0];
+        const regex = new RegExp('\\b' + targetPrep + '\\b', 'i');
+        const cloze = item.phrase.replace(regex, '_____');
+
+        const distractors = ['to', 'with', 'for', 'about', 'at', 'in', 'on', 'from', 'of', 'by']
+          .filter(p => p.toLowerCase() !== targetPrep.toLowerCase())
+          .sort(() => 0.5 - Math.random())
+          .slice(0, 3);
+        const options = [targetPrep, ...distractors].sort(() => 0.5 - Math.random());
+
+        return {
+          item,
+          type: 'prep',
+          question: cloze,
+          subtext: `Nghĩa: ${item.meaning}`,
+          correctAnswer: targetPrep,
+          options,
+          explanation: `Cụm từ hoàn chỉnh là: "${item.phrase}" mang nghĩa "${item.meaning}"`
+        };
+      } else {
+        // Meaning question
+        const otherPool = AppState.items.filter(it => it.id !== item.id);
+        const distractors = otherPool.sort(() => 0.5 - Math.random()).slice(0, 3).map(it => it.meaning);
+        const options = [item.meaning, ...distractors].sort(() => 0.5 - Math.random());
+
+        return {
+          item,
+          type: 'meaning',
+          question: item.phrase,
+          subtext: 'Chọn nghĩa tiếng Việt chính xác nhất:',
+          correctAnswer: item.meaning,
+          options,
+          explanation: `"${item.phrase}" có nghĩa là "${item.meaning}"`
+        };
+      }
+    }
+
+    function startQuiz() {
+      let pool = [...AppState.items];
+      if (AppState.quizSource === 'starred') {
+        pool = pool.filter(it => AppState.starredSet.has(it.id));
+      } else if (AppState.quizSource === 'unlearned') {
+        pool = pool.filter(it => !AppState.learnedSet.has(it.id));
+      }
+
+      if (pool.length === 0) {
+        showToast('Không có câu nào trong danh mục này! Sử dụng toàn bộ kho từ.', '⚠️', 'bg-amber-500');
+        pool = [...AppState.items];
+      }
+
+      const shuffled = pool.sort(() => 0.5 - Math.random()).slice(0, AppState.quizTotalCount);
+      AppState.quizQuestions = shuffled.map(it => createQuestionObj(it));
+      AppState.quizIndex = 0;
+      AppState.quizScore = 0;
+      AppState.quizStreak = 0;
+      AppState.quizWrongList = [];
+      AppState.quizTimerSec = 0;
+
+      document.getElementById('quiz-setup-view').classList.add('hidden');
+      document.getElementById('quiz-active-view').classList.remove('hidden');
+      document.getElementById('quiz-summary-view').classList.add('hidden');
+
+      startQuizTimer();
+      renderCurrentQuizQuestion();
+    }
+
+    function startQuizTimer() {
+      clearInterval(AppState.quizTimerInterval);
+      const timerEl = document.getElementById('q-timer');
+      AppState.quizTimerInterval = setInterval(() => {
+        AppState.quizTimerSec++;
+        const mins = String(Math.floor(AppState.quizTimerSec / 60)).padStart(2, '0');
+        const secs = String(AppState.quizTimerSec % 60).padStart(2, '0');
+        timerEl.textContent = `⏱️ ${mins}:${secs}`;
+      }, 1000);
+    }
+
+    function renderCurrentQuizQuestion() {
+      const q = AppState.quizQuestions[AppState.quizIndex];
+      const total = AppState.quizQuestions.length;
+
+      document.getElementById('q-counter').textContent = `Câu ${AppState.quizIndex + 1} / ${total}`;
+      document.getElementById('q-streak-badge').textContent = `🔥 ${AppState.quizStreak} streak`;
+      document.getElementById('q-score').textContent = `Điểm: ${AppState.quizScore}`;
+      document.getElementById('q-progress-bar').style.width = `${((AppState.quizIndex + 1) / total) * 100}%`;
+
+      document.getElementById('q-type-badge').textContent = q.type === 'prep' ? '🎯 Điền giới từ' : '📖 Dịch nghĩa';
+      document.getElementById('q-text').textContent = q.question;
+      document.getElementById('q-subtext').textContent = q.subtext;
+
+      document.getElementById('q-feedback-box').classList.add('hidden');
+
+      const container = document.getElementById('q-options-container');
+      container.innerHTML = q.options.map((opt, i) => `
+        <button class="q-opt-btn p-4 rounded-2xl border-2 border-pink-100 hover:border-pink-400 bg-white hover:bg-pink-50/60 text-slate-800 text-sm font-semibold transition text-left flex items-start gap-3 shadow-sm" data-idx="${i}" data-val="${encodeURIComponent(opt)}">
+          <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-700 font-bold text-xs flex items-center justify-center shrink-0">${String.fromCharCode(65 + i)}</span>
+          <span>${opt}</span>
+        </button>
+      `).join('');
+
+      container.querySelectorAll('.q-opt-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const chosen = decodeURIComponent(btn.getAttribute('data-val'));
+          handleQuizAnswer(chosen, btn);
+        });
+      });
+    }
+
+    function handleQuizAnswer(chosenVal, btnElement) {
+      const q = AppState.quizQuestions[AppState.quizIndex];
+      const isCorrect = chosenVal.trim().toLowerCase() === q.correctAnswer.trim().toLowerCase();
+      const container = document.getElementById('q-options-container');
+
+      container.querySelectorAll('.q-opt-btn').forEach(btn => {
+        btn.disabled = true;
+        const val = decodeURIComponent(btn.getAttribute('data-val'));
+        if (val.trim().toLowerCase() === q.correctAnswer.trim().toLowerCase()) {
+          btn.className = 'q-opt-btn p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50 text-emerald-800 text-sm font-bold text-left flex items-start gap-3 shadow-sm';
+        } else if (btn === btnElement && !isCorrect) {
+          btn.className = 'q-opt-btn p-4 rounded-2xl border-2 border-rose-500 bg-rose-50 text-rose-800 text-sm font-bold text-left flex items-start gap-3 shadow-sm';
+        }
+      });
+
+      const fbBox = document.getElementById('q-feedback-box');
+      const fbVerdict = document.getElementById('q-feedback-verdict');
+      const fbDetail = document.getElementById('q-feedback-detail');
+      fbBox.classList.remove('hidden');
+
+      if (isCorrect) {
+        playSound('correct');
+        AppState.quizStreak++;
+        AppState.quizScore += 10 + Math.min(AppState.quizStreak * 2, 20); // combo bonus!
+        fbBox.className = 'mt-6 p-4 rounded-2xl bg-emerald-50/80 border-2 border-emerald-300 text-left';
+        fbVerdict.innerHTML = '<span class="text-emerald-700 font-extrabold">🎉 Chính xác! Tuyệt vời!</span>';
+      } else {
+        playSound('wrong');
+        AppState.quizStreak = 0;
+        AppState.quizWrongList.push({
+          q,
+          chosen: chosenVal
+        });
+        fbBox.className = 'mt-6 p-4 rounded-2xl bg-rose-50/80 border-2 border-rose-300 text-left';
+        fbVerdict.innerHTML = `<span class="text-rose-700 font-extrabold">❌ Chưa chính xác! Đáp án đúng: <span class="underline">${q.correctAnswer}</span></span>`;
+      }
+
+      fbDetail.textContent = q.explanation;
+      document.getElementById('q-score').textContent = `Điểm: ${AppState.quizScore}`;
+      document.getElementById('q-streak-badge').textContent = `🔥 ${AppState.quizStreak} streak`;
+
+      // Star toggle on question item
+      const starBtn = document.getElementById('btn-q-star-this');
+      starBtn.className = AppState.starredSet.has(q.item.id) ? 'text-xl text-amber-400' : 'text-xl text-slate-300';
+    }
+
+    function finishQuiz() {
+      clearInterval(AppState.quizTimerInterval);
+      document.getElementById('quiz-active-view').classList.add('hidden');
+      document.getElementById('quiz-summary-view').classList.remove('hidden');
+
+      const total = AppState.quizQuestions.length;
+      const correct = total - AppState.quizWrongList.length;
+      const pct = Math.round((correct / total) * 100);
+
+      document.getElementById('qr-score-pct').textContent = `${pct}%`;
+      document.getElementById('qr-correct-ratio').textContent = `${correct}/${total}`;
+
+      const mins = String(Math.floor(AppState.quizTimerSec / 60)).padStart(2, '0');
+      const secs = String(AppState.quizTimerSec % 60).padStart(2, '0');
+      document.getElementById('qr-time-spent').textContent = `${mins}:${secs}`;
+
+      if (pct >= 80) {
+        playSound('fanfare');
+        triggerConfetti();
+        document.getElementById('qr-title').textContent = '🏆 Xuất Sắc! Điểm Tuyệt Vời!';
+        document.getElementById('qr-message').textContent = 'Bạn đã nắm rất vững các cấu trúc giới từ tiếng Anh trọng điểm!';
+      } else if (pct >= 50) {
+        playSound('correct');
+        document.getElementById('qr-title').textContent = '👍 Khá Tốt! Tiếp Tục Phát Huy!';
+        document.getElementById('qr-message').textContent = 'Bạn đã nắm được phần lớn kiến thức, hãy ôn lại các câu sai để bứt phá nhé!';
+      } else {
+        document.getElementById('qr-title').textContent = '💪 Cố Gắng Lên Nhé!';
+        document.getElementById('qr-message').textContent = 'Hãy dành thêm thời gian luyện Flashcard và làm lại bài kiểm tra nhé!';
+      }
+
+      // Wrong questions review
+      const wrongContainer = document.getElementById('qr-wrong-section');
+      const wrongListEl = document.getElementById('qr-wrong-list');
+      const retryWrongBtn = document.getElementById('btn-qr-retry-wrong');
+
+      if (AppState.quizWrongList.length > 0) {
+        wrongContainer.classList.remove('hidden');
+        retryWrongBtn.classList.remove('hidden');
+        wrongListEl.innerHTML = AppState.quizWrongList.map(item => `
+          <div class="p-3 bg-rose-50 border border-rose-200 rounded-xl text-xs">
+            <div class="font-bold text-slate-800">${item.q.item.phrase}</div>
+            <div class="text-rose-600 font-semibold mt-0.5">Đáp án đúng: ${item.q.correctAnswer} | Bạn chọn: ${item.chosen}</div>
+            <div class="text-slate-500 italic mt-0.5">Nghĩa: ${item.q.item.meaning}</div>
+          </div>
+        `).join('');
+      } else {
+        wrongContainer.classList.add('hidden');
+        retryWrongBtn.classList.add('hidden');
+      }
+    }
+
+    // ==========================================
+    // TAB 5: MATCHING GAME (Game Nối Từ)
+    // ==========================================
+    function initMatchingGame() {
+      const pool = [...AppState.items].sort(() => 0.5 - Math.random()).slice(0, 6);
+      AppState.mgMatchedPairs = 0;
+      AppState.mgTurns = 0;
+      AppState.mgSelected = null;
+      AppState.mgLock = false;
+
+      document.getElementById('mg-matched-count').textContent = '0';
+      document.getElementById('mg-turns').textContent = '0';
+
+      // 6 English + 6 Vietnamese = 12 cards
+      const cards = [];
+      pool.forEach(it => {
+        cards.push({ id: it.id, type: 'en', text: it.phrase, matched: false });
+        cards.push({ id: it.id, type: 'vi', text: it.meaning, matched: false });
+      });
+      // Shuffle 12 cards
+      AppState.mgCards = cards.sort(() => 0.5 - Math.random());
+      renderMatchingBoard();
+    }
+
+    function renderMatchingBoard() {
+      const grid = document.getElementById('mg-cards-grid');
+      grid.innerHTML = AppState.mgCards.map((card, idx) => `
+        <button class="mg-card-btn h-28 p-3 rounded-2xl border-2 transition-all duration-200 text-xs sm:text-sm font-bold flex items-center justify-center text-center shadow-sm select-none ${
+          card.matched 
+            ? 'border-emerald-300 bg-emerald-100/60 text-emerald-800 opacity-60 cursor-default'
+            : 'border-pink-200 bg-white hover:border-pink-400 hover:bg-pink-50/50 text-slate-800'
+        }" data-idx="${idx}">
+          ${card.text}
+        </button>
+      `).join('');
+
+      grid.querySelectorAll('.mg-card-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-idx'));
+          handleMatchingCardClick(idx, btn);
+        });
+      });
+    }
+
+    function handleMatchingCardClick(idx, btnElement) {
+      if (AppState.mgLock) return;
+      const card = AppState.mgCards[idx];
+      if (card.matched) return;
+
+      // Select first card
+      if (!AppState.mgSelected) {
+        playSound('click');
+        AppState.mgSelected = { idx, card, el: btnElement };
+        btnElement.classList.add('border-pink-600', 'bg-pink-100', 'ring-2', 'ring-pink-300');
+        return;
+      }
+
+      // Clicked same card
+      if (AppState.mgSelected.idx === idx) return;
+
+      // Second card clicked
+      AppState.mgTurns++;
+      document.getElementById('mg-turns').textContent = AppState.mgTurns;
+
+      const first = AppState.mgSelected;
+      const second = { idx, card, el: btnElement };
+
+      // Check match: same item id and different types (en vs vi)
+      if (first.card.id === second.card.id && first.card.type !== second.card.type) {
+        // Match!
+        playSound('correct');
+        first.card.matched = true;
+        second.card.matched = true;
+        AppState.mgMatchedPairs++;
+        document.getElementById('mg-matched-count').textContent = AppState.mgMatchedPairs;
+
+        first.el.className = 'mg-card-btn h-28 p-3 rounded-2xl border-2 border-emerald-400 bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-center opacity-70';
+        second.el.className = 'mg-card-btn h-28 p-3 rounded-2xl border-2 border-emerald-400 bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-center opacity-70';
+        AppState.mgSelected = null;
+
+        if (AppState.mgMatchedPairs === 6) {
+          playSound('fanfare');
+          triggerConfetti();
+          showToast(`Chiến thắng sau ${AppState.mgTurns} lượt ghép! 🎉`, '🏆', 'bg-emerald-600');
+        }
+      } else {
+        // Wrong match
+        playSound('wrong');
+        AppState.mgLock = true;
+        second.el.classList.add('border-rose-500', 'bg-rose-100');
+        first.el.classList.add('border-rose-500', 'bg-rose-100');
+
+        setTimeout(() => {
+          first.el.className = 'mg-card-btn h-28 p-3 rounded-2xl border-2 border-pink-200 bg-white hover:border-pink-400 hover:bg-pink-50/50 text-slate-800 text-xs sm:text-sm font-bold flex items-center justify-center text-center shadow-sm';
+          second.el.className = 'mg-card-btn h-28 p-3 rounded-2xl border-2 border-pink-200 bg-white hover:border-pink-400 hover:bg-pink-50/50 text-slate-800 text-xs sm:text-sm font-bold flex items-center justify-center text-center shadow-sm';
+          AppState.mgSelected = null;
+          AppState.mgLock = false;
+        }, 700);
+      }
+    }
+
+    // ==========================================
+    // TAB 6: FAVORITES
+    // ==========================================
+    function renderFavoritesTab() {
+      const grid = document.getElementById('fav-cards-grid');
+      const starredItems = AppState.items.filter(it => AppState.starredSet.has(it.id));
+
+      if (starredItems.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 text-center bg-white/70 rounded-3xl border border-pink-200 p-8">
+            <div class="text-4xl mb-3">⭐</div>
+            <div class="text-lg font-bold text-slate-700">Chưa có cấu trúc nào được lưu</div>
+            <p class="text-xs text-slate-500 mt-1">Hãy nhấn vào biểu tượng ngôi sao ⭐ ở bất kỳ cấu trúc nào để lưu vào đây nhé!</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = starredItems.map(item => `
+        <div class="bg-white/90 border border-amber-200 rounded-3xl p-5 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold text-xs">#${item.stt}</span>
+              <button class="btn-fav-speak p-1.5 hover:bg-pink-100 text-pink-600 rounded-xl" data-phrase="${encodeURIComponent(item.phrase)}">🔊</button>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 leading-snug">${item.phrase}</h3>
+          </div>
+          <div class="mt-4 pt-3 border-t border-amber-100">
+            <p class="text-xs md:text-sm text-slate-600 font-medium">${item.meaning}</p>
+            <div class="mt-3 flex justify-end">
+              <button class="btn-remove-fav text-xs font-semibold text-rose-500 hover:underline" data-id="${item.id}">Bỏ lưu</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      grid.querySelectorAll('.btn-fav-speak').forEach(btn => {
+        btn.addEventListener('click', () => {
+          speakText(decodeURIComponent(btn.getAttribute('data-phrase')));
+        });
+      });
+
+      grid.querySelectorAll('.btn-remove-fav').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = parseInt(btn.getAttribute('data-id'));
+          AppState.starredSet.delete(id);
+          saveStorage();
+          updateHeaderStats();
+          renderFavoritesTab();
+        });
+      });
+    }
+
+    // ==========================================
+    // GLOBAL EVENT LISTENERS & SETUP
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', () => {
+      updateHeaderStats();
+      initDirectoryPills();
+      renderDirectory();
+
+      // Tab bar click delegation
+      document.getElementById('nav-tabs').querySelectorAll('.nav-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          playSound('click');
+          switchTab(btn.getAttribute('data-tab'));
+        });
+      });
+
+      // Sound toggle button
+      document.getElementById('btn-toggle-sound').addEventListener('click', () => {
+        AppState.soundEnabled = !AppState.soundEnabled;
+        document.getElementById('sound-icon').textContent = AppState.soundEnabled ? '🔊' : '🔇';
+        saveStorage();
+        showToast(AppState.soundEnabled ? 'Đã bật âm thanh' : 'Đã tắt âm thanh', AppState.soundEnabled ? '🔊' : '🔇');
+      });
+
+      // Search & Filters in Directory
+      const searchInput = document.getElementById('dir-search-input');
+      const clearBtn = document.getElementById('dir-search-clear');
+      searchInput.addEventListener('input', () => {
+        AppState.dirSearchQuery = searchInput.value;
+        clearBtn.classList.toggle('hidden', !searchInput.value);
+        renderDirectory();
+      });
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        AppState.dirSearchQuery = '';
+        clearBtn.classList.add('hidden');
+        renderDirectory();
+      });
+
+      document.getElementById('dir-status-filter').addEventListener('change', (e) => {
+        AppState.dirStatusFilter = e.target.value;
+        renderDirectory();
+      });
+
+      document.getElementById('btn-read-all-search').addEventListener('click', () => {
+        const item = AppState.items[Math.floor(Math.random() * AppState.items.length)];
+        speakText(item.phrase);
+        showToast(`Đang đọc: ${item.phrase}`, '🔊');
+      });
+
+      // Listening mode toggles
+      document.getElementById('btn-listen-mode-quiz').addEventListener('click', () => setListeningMode('quiz'));
+      document.getElementById('btn-listen-mode-dictation').addEventListener('click', () => setListeningMode('dictation'));
+      document.getElementById('btn-listen-mode-autoplay').addEventListener('click', () => setListeningMode('autoplay'));
+
+      // Speech speed controls
+      document.querySelectorAll('.rate-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.rate-btn').forEach(b => {
+            b.className = 'rate-btn px-2.5 py-1 rounded-lg border border-pink-200 hover:bg-pink-50 transition';
+          });
+          btn.className = 'rate-btn active px-2.5 py-1 rounded-lg bg-pink-500 text-white font-bold transition';
+          AppState.speechRate = parseFloat(btn.getAttribute('data-rate'));
+          showToast(`Tốc độ đọc: ${AppState.speechRate}x`, '⚡');
+        });
+      });
+
+      // Listening Quiz Actions
+      document.getElementById('btn-lq-play-audio').addEventListener('click', () => {
+        if (AppState.lqCurrentItem) speakText(AppState.lqCurrentItem.phrase);
+      });
+      document.getElementById('btn-lq-speak-again').addEventListener('click', () => {
+        if (AppState.lqCurrentItem) speakText(AppState.lqCurrentItem.phrase);
+      });
+      document.getElementById('btn-lq-next').addEventListener('click', () => {
+        AppState.lqCurrentIdx++;
+        if (AppState.lqCurrentIdx > AppState.lqTotal) {
+          showToast(`Hoàn thành phần nghe! Điểm: ${AppState.lqScore}`, '🏆');
+          AppState.lqCurrentIdx = 1;
+        }
+        loadNextListeningQuiz();
+      });
+
+      // Dictation Actions
+      document.getElementById('btn-ld-play-audio').addEventListener('click', () => {
+        if (AppState.ldCurrentItem) speakText(AppState.ldCurrentItem.phrase);
+      });
+      document.getElementById('btn-ld-next').addEventListener('click', () => {
+        AppState.ldCurrentIdx++;
+        loadNextDictation();
+      });
+
+      // Autoplay Actions
+      document.getElementById('btn-ap-play-toggle').addEventListener('click', toggleAutoplay);
+      document.getElementById('btn-ap-next').addEventListener('click', () => {
+        AppState.apIndex = (AppState.apIndex + 1) % AppState.items.length;
+        updateAutoplayCard();
+        speakText(AppState.items[AppState.apIndex].phrase);
+      });
+      document.getElementById('btn-ap-prev').addEventListener('click', () => {
+        AppState.apIndex = (AppState.apIndex - 1 + AppState.items.length) % AppState.items.length;
+        updateAutoplayCard();
+        speakText(AppState.items[AppState.apIndex].phrase);
+      });
+
+      // Flashcard Flipper & Controls
+      document.getElementById('fc-card-flipper').addEventListener('click', () => {
+        playSound('click');
+        AppState.fcFlipped = !AppState.fcFlipped;
+        document.getElementById('fc-card-inner').classList.toggle('card-flipped', AppState.fcFlipped);
+      });
+
+      document.getElementById('btn-fc-speak-front').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const item = AppState.fcList[AppState.fcIndex];
+        if (item) speakText(item.phrase);
+      });
+
+      document.getElementById('btn-fc-star').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const item = AppState.fcList[AppState.fcIndex];
+        if (!item) return;
+        if (AppState.starredSet.has(item.id)) {
+          AppState.starredSet.delete(item.id);
+        } else {
+          AppState.starredSet.add(item.id);
+        }
+        saveStorage();
+        updateHeaderStats();
+        renderCurrentFlashcard();
+      });
+
+      document.getElementById('btn-fc-mark-learned').addEventListener('click', () => {
+        const item = AppState.fcList[AppState.fcIndex];
+        if (!item) return;
+        AppState.learnedSet.add(item.id);
+        playSound('correct');
+        saveStorage();
+        updateHeaderStats();
+        // Auto next
+        if (AppState.fcIndex < AppState.fcList.length - 1) {
+          AppState.fcIndex++;
+        }
+        renderCurrentFlashcard();
+      });
+
+      document.getElementById('btn-fc-mark-unlearned').addEventListener('click', () => {
+        const item = AppState.fcList[AppState.fcIndex];
+        if (!item) return;
+        AppState.learnedSet.delete(item.id);
+        saveStorage();
+        updateHeaderStats();
+        if (AppState.fcIndex < AppState.fcList.length - 1) {
+          AppState.fcIndex++;
+        }
+        renderCurrentFlashcard();
+      });
+
+      document.getElementById('btn-fc-next').addEventListener('click', () => {
+        if (AppState.fcIndex < AppState.fcList.length - 1) {
+          AppState.fcIndex++;
+          renderCurrentFlashcard();
+        } else {
+          showToast('Đã đến thẻ cuối cùng!', '🏁');
+        }
+      });
+
+      document.getElementById('btn-fc-prev').addEventListener('click', () => {
+        if (AppState.fcIndex > 0) {
+          AppState.fcIndex--;
+          renderCurrentFlashcard();
+        }
+      });
+
+      document.getElementById('btn-fc-shuffle').addEventListener('click', () => {
+        AppState.fcList.sort(() => 0.5 - Math.random());
+        AppState.fcIndex = 0;
+        showToast('Đã xáo trộn bộ thẻ!', '🔀');
+        renderCurrentFlashcard();
+      });
+
+      document.getElementById('fc-deck-filter').addEventListener('change', () => {
+        initFlashcardsTab();
+      });
+
+      // Quiz Setup Controls
+      document.querySelectorAll('.quiz-count-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.quiz-count-btn').forEach(b => {
+            b.className = 'quiz-count-btn py-2.5 rounded-2xl border border-pink-200 hover:border-pink-400 bg-white text-slate-700 font-bold text-sm';
+          });
+          btn.className = 'quiz-count-btn active py-2.5 rounded-2xl border-2 border-pink-500 bg-pink-50 text-pink-700 font-bold text-sm';
+          AppState.quizTotalCount = parseInt(btn.getAttribute('data-count'));
+        });
+      });
+
+      document.querySelectorAll('.quiz-type-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.quiz-type-btn').forEach(b => {
+            b.className = 'quiz-type-btn p-3 rounded-2xl border border-pink-200 bg-white text-slate-700 font-bold text-xs text-left';
+          });
+          btn.className = 'quiz-type-btn active p-3 rounded-2xl border-2 border-pink-500 bg-pink-50 text-pink-700 font-bold text-xs text-left';
+          AppState.quizType = btn.getAttribute('data-type');
+        });
+      });
+
+      document.getElementById('quiz-source-select').addEventListener('change', (e) => {
+        AppState.quizSource = e.target.value;
+      });
+
+      document.getElementById('btn-quiz-start').addEventListener('click', startQuiz);
+
+      document.getElementById('btn-q-speak').addEventListener('click', () => {
+        const q = AppState.quizQuestions[AppState.quizIndex];
+        if (q && q.item) speakText(q.item.phrase);
+      });
+
+      document.getElementById('btn-q-star-this').addEventListener('click', () => {
+        const q = AppState.quizQuestions[AppState.quizIndex];
+        if (!q) return;
+        const id = q.item.id;
+        if (AppState.starredSet.has(id)) {
+          AppState.starredSet.delete(id);
+          document.getElementById('btn-q-star-this').className = 'text-xl text-slate-300';
+          showToast('Đã bỏ lưu câu hỏi này', '⭐');
+        } else {
+          AppState.starredSet.add(id);
+          document.getElementById('btn-q-star-this').className = 'text-xl text-amber-400';
+          showToast('Đã lưu câu hỏi vào danh sách!', '⭐', 'bg-amber-500');
+        }
+        saveStorage();
+        updateHeaderStats();
+      });
+
+      document.getElementById('btn-q-next').addEventListener('click', () => {
+        AppState.quizIndex++;
+        if (AppState.quizIndex < AppState.quizQuestions.length) {
+          renderCurrentQuizQuestion();
+        } else {
+          finishQuiz();
+        }
+      });
+
+      // Quiz Summary Actions
+      document.getElementById('btn-qr-retry').addEventListener('click', initQuizSetup);
+      document.getElementById('btn-qr-go-directory').addEventListener('click', () => switchTab('directory'));
+      document.getElementById('btn-qr-retry-wrong').addEventListener('click', () => {
+        if (AppState.quizWrongList.length === 0) return;
+        AppState.quizQuestions = AppState.quizWrongList.map(w => createQuestionObj(w.q.item));
+        AppState.quizIndex = 0;
+        AppState.quizScore = 0;
+        AppState.quizStreak = 0;
+        AppState.quizWrongList = [];
+        AppState.quizTimerSec = 0;
+        document.getElementById('quiz-summary-view').classList.add('hidden');
+        document.getElementById('quiz-active-view').classList.remove('hidden');
+        startQuizTimer();
+        renderCurrentQuizQuestion();
+      });
+
+      // Matching Game Reset
+      document.getElementById('btn-mg-reset').addEventListener('click', initMatchingGame);
+
+      // Favorites Tab Actions
+      document.getElementById('btn-fav-practice-fc').addEventListener('click', () => {
+        document.getElementById('fc-deck-filter').value = 'starred';
+        switchTab('flashcards');
+      });
+
+      document.getElementById('btn-fav-clear').addEventListener('click', () => {
+        if (AppState.starredSet.size === 0) return;
+        AppState.starredSet.clear();
+        saveStorage();
+        updateHeaderStats();
+        renderFavoritesTab();
+        showToast('Đã xóa tất cả từ yêu thích', '🧹');
+      });
+    });
+  </script>
+</body>
+</html>
